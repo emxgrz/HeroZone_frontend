@@ -13,12 +13,12 @@ function SuperHeroList() {
           params: {
             apikey: import.meta.env.VITE_API_KEY,
             ts: import.meta.env.VITE_TIMESTAMP,
-            hash: import.meta.env.VITE_HASH
-            // limit: 42
+            hash: import.meta.env.VITE_HASH,
+            limit: 42 // temporal limit, to be reviewed
           }
         })
         
-        setMarvelSuperheroes(response.data.data.results)
+        setMarvelSuperheroes(response.data.data.results) // Marvel API format includes data section to access info
 
       } catch (error) {
         console.log('Error fetching Marvel SuperHeroes: ', error)
@@ -35,7 +35,12 @@ function SuperHeroList() {
       {marvelSuperheroes.map((marvelSuperhero) => (
         <SuperHeroCard
         key={marvelSuperhero.id}
-        marvelSuperhero={marvelSuperhero}
+        name={marvelSuperhero.name}
+        image={`${marvelSuperhero.thumbnail.path}.${marvelSuperhero.thumbnail.extension}`} // follows API data format to get the image url; http correction needed?
+        description={marvelSuperhero.description ? marvelSuperhero.description : 'No description available - yet.'}
+
+        // onClick={() => navigate(`/superheroes/${marvelSuperhero.id}`)} // potential DetailsPage, to review; pass as prop if used!!
+
         />
       ))}
     </div>
