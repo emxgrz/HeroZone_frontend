@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 function CreateSuperHeroForm({setNewSuperheroes}) {
+  // function CreateSuperHeroForm() {
   const [name, setName] = useState("")
   const [author, setAuthor] = useState("")
   const [description, setDescription] = useState("")
