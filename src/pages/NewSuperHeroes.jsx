@@ -1,7 +1,8 @@
-function CustomizedSuperHero() {
+function NewSuperHeroes() {
   return (
-    <div>CustomizedSuperHero</div>
+    <div>NewSuperHeroes</div>
   )
 }
 
-export default CustomizedSuperHero
+export default NewSuperHeroes
+
