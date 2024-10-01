@@ -22,7 +22,7 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
               // 'https://www.superheroapi.com/api.php/2223df421bf7e97436ce3ca86b182fbb/id'
               // `https://www.superheroapi.com/api.php/${import.meta.env.VITE_OPEN_API_URL}`
 
-              `https://gateway.marvel.com//v1/public/characters?apikey=205601498972ebaa09436ade5df812b5&ts=1&hash=e4e885d0262f63d194a13bcfa7acf555&limit=4`
+              `https://gateway.marvel.com//v1/public/characters?apikey=205601498972ebaa09436ade5df812b5&ts=1&hash=e4e885d0262f63d194a13bcfa7acf555&limit=2`
 
               // `https://gateway.marvel.com//v1/public/comics?apikey=205601498972ebaa09436ade5df812b5&ts=1&hash=e4e885d0262f63d194a13bcfa7acf555&limit=4`
             )
@@ -42,12 +42,12 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
 
   }, [])
 
-  console.log(setMarvelSuperheroes)
-  console.log(marvelSuperheroes)
+  // console.log(setMarvelSuperheroes)
+  // console.log(marvelSuperheroes)
 
   return (
     <div className="marvel-superhero-list">
-      {/* {marvelSuperheroes.map((marvelSuperhero) => (
+      {marvelSuperheroes.map((marvelSuperhero) => (
         <SuperHeroCard
         key={marvelSuperhero.id}
         name={marvelSuperhero.name}
@@ -57,7 +57,7 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
         // onClick={() => navigate(`/superheroes/${marvelSuperhero.id}`)} // potential DetailsPage, to review; pass as prop if used!!
 
         />
-      ))} */}
+      ))}
     </div>
   )
 }

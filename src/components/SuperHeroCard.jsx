@@ -3,7 +3,7 @@ function SuperHeroCard({ name, image, description }) { // pass 'onClick' if need
 
   return (
     <div className="marvel-superhero-card">
-      <img src={image} alt={name} />
+      <img src={image} />
       <h2>{name}</h2>
       <p>{description}</p>
     </div>
