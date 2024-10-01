@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function SuperHeroDetails() {
-  const { id } = useParams(); // Get the ID from the URL
+  const { id } = useParams();
   const [superHero, setSuperHero] = useState(null);
 
   useEffect(() => {

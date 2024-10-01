@@ -5,11 +5,12 @@
 #root {
   margin: 0 auto;
   text-align: center;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   background-color: #202020;
   --font-text: "Roboto", sans-serif;
-  --font-heading: "Anton", sans-serif;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -22,6 +23,7 @@ body {
   max-height: 100vh;
   color: #e23636 !important;
   background-color: #202020;
+  padding-top: 75px;
 }
 
 .navbar {
@@ -29,15 +31,41 @@ body {
   border-bottom: 3px solid #e23636;
   font-family: "Bangers", system-ui;
   letter-spacing: 2px;
-  padding: 10px;
+  padding: 15px;
+  margin-bottom: 30px;
 }
 
-/* .navbar-brand, .nav-link {
-  color: #e23636 !important; 
-} */
+.navbar-brand, .nav-link {
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.nav-link:hover, .navbar-brand:hover {
+  color: #202020 !important;
+  background-color: #FFDE21;
+}
+
+.nav-link {
+  color: #e23636 !important;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
 .nav-link.active {
+  background-color: #e23636;
+  color: #202020 !important;
   border-bottom: 2px solid #e23636;
+  box-shadow: 0 4px 15px rgba(226, 54, 54, 0.6);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: rgba(226, 54, 54, 0.6);
+  color: #ededed !important;
+}
+
+.navbar-toggler:hover {
+  background-color: #979797; /* Change background color on hover */
 }
 
 h1 {
@@ -113,13 +141,34 @@ h1 {
   font-family: "Play", sans-serif;
 }
 
+.footer {
+  background-color: #202020;
+  border-top: 3px solid #e23636;
+  font-family: "Bangers", system-ui;
+  letter-spacing: 1.2px;
+  display: block;
+  margin-bottom: 0;
+  margin-top: auto;
+  padding: 15px !important;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #e23636 !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
 
 @media (max-width: 768px) {
 
   h1 {
-    font-size: 30px !important;
+    font-size: 50px !important;
     padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     padding: 0.2;
   }
 
@@ -146,7 +195,8 @@ h1 {
   }
 
   .navbar {
-    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
   
   #marvel-superhero-card {
