@@ -20,7 +20,7 @@ function Navbar() {
               <Link className="nav-link" to="/favorite-superheroes">Favs</Link>
             </li> */}
             <li className="nav-item">
-              <Link className="nav-link" to="/create-character">Create Your Hero</Link>
+              <Link className="nav-link" to="/create-character">Create Your SuperHero</Link>
             </li>
           </ul>
         </div>
