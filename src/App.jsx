@@ -1,4 +1,8 @@
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
+
+import Home from './pages/Home.jsx'
+import NewSuperHeroes from './pages/NewSuperHeroes.jsx'
 
 function App() {
 
