@@ -39,6 +39,8 @@ function App() {
           {/* <Route path="/comic-details/:id" element={<ComicDetails />} /> */}
           {/* <Route path="/superhero-details/:id" element={<SuperHeroDetails />} /> */}
 
+          {/* <Route path="/superhero-details" element={<SuperHeroDetails />} /> */}
+
           <Route path="/About" element={<AboutPage />} />
           <Route path="*" element={<Error404 />} />
         </Routes>

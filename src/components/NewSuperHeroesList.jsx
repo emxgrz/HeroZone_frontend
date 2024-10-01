@@ -4,9 +4,7 @@ import NewSuperHeroCard from "./SuperHeroCard";
 
 function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
   // function NewSuperHeroesList() {
-
-
-  console.log(newSuperheroes, setNewSuperheroes)
+  // console.log(newSuperheroes, setNewSuperheroes)
 
   useEffect(() => {
     const fetchNewSuperheroes = async () => {
@@ -14,7 +12,7 @@ function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
         // const response = await axios.get(`${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes`)
         // console.log('JSON server URL:', import.meta.env.VITE_JSON_SERVER_URL) // undefined, check
         const response = await axios.get(`http://localhost:4000/newsuperheroes`)
-        console.log(response.data)
+        // console.log(response.data)
         setNewSuperheroes(response.data) // sets newsuperheroes data from JSON server
         
 
@@ -27,7 +25,7 @@ function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
     fetchNewSuperheroes() // fetch superheroes from JSON server when component mounts
 
   }, []) // empty array to ensures useEffect runs only once when the component monts
-  console.log(setNewSuperheroes)
+  // console.log(setNewSuperheroes)
 
 
   return (

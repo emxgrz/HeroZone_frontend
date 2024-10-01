@@ -2,23 +2,31 @@ import { useEffect } from "react"; // check if useState is needed when running
 import axios from 'axios';
 import SuperHeroCard from "./SuperHeroCard";
 
-function SuperHeroList({ marvelSuperheroes, setMarvelSuperheroes }) {
-
-  
+function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
 
   useEffect(() => {
     const fetchMarvelSuperheroes = async () => {
-      try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/v1/public/characters`, {
-          params: {
-            apikey: import.meta.env.VITE_API_KEY,
-            ts: import.meta.env.VITE_TIMESTAMP,
-            hash: import.meta.env.VITE_HASH,
-            limit: 42 // temporal limit, to be reviewed
-          }
-        })
+      // try {
+      //   const response = await axios.get(`${import.meta.env.VITE_API_URL}/v1/public/characters`, {
+      //     params: {
+      //       apikey: import.meta.env.VITE_API_KEY,
+      //       ts: import.meta.env.VITE_TIMESTAMP,
+      //       hash: import.meta.env.VITE_HASH,
+      //       limit: 42 // temporal limit, to be reviewed
+      //     }
+      //   })
+
+        try {
+            const response = await axios.get(
+
+              'https://www.superheroapi.com/api.php/2223df421bf7e97436ce3ca86b182fbb/id'
+              // `https://www.superheroapi.com/api.php/${import.meta.env.VITE_OPEN_API_URL}`
+
+            )
         
-        setMarvelSuperheroes(response.data.data.results) // Marvel API format includes data section to access info
+        console.log(response.data)
+        // console.log(response.data.name)
+        setMarvelSuperheroes(response.data) // Marvel API format includes data section to access info
 
       } catch (error) {
         console.log('Error fetching Marvel SuperHeroes: ', error)
@@ -29,10 +37,12 @@ function SuperHeroList({ marvelSuperheroes, setMarvelSuperheroes }) {
 
   }, [])
 
+  console.log(setMarvelSuperheroes)
+  console.log(marvelSuperheroes)
 
   return (
     <div className="marvel-superhero-list">
-      {marvelSuperheroes.map((marvelSuperhero) => (
+      {/* {marvelSuperheroes.map((marvelSuperhero) => (
         <SuperHeroCard
         key={marvelSuperhero.id}
         name={marvelSuperhero.name}
@@ -42,9 +52,9 @@ function SuperHeroList({ marvelSuperheroes, setMarvelSuperheroes }) {
         // onClick={() => navigate(`/superheroes/${marvelSuperhero.id}`)} // potential DetailsPage, to review; pass as prop if used!!
 
         />
-      ))}
+      ))} */}
     </div>
   )
 }
 
-export default SuperHeroList
+export default SuperHeroesList
