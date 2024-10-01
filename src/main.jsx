@@ -4,6 +4,8 @@ import './index.css'
 
 createRoot(document.getElementById('root')).render(
 
-    <App />
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
 
 )
