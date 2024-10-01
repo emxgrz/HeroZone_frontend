@@ -4,9 +4,6 @@ import SuperHeroCard from "./SuperHeroCard";
 
 function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
 
-  console.log("API URL:", import.meta.env.VITE_API_URL)
-  console.log("API URL:", import.meta.env.VITE_API_KEY)
-
 
   useEffect(() => {
     const fetchMarvelSuperheroes = async () => {
@@ -20,14 +17,6 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
           }
         })
 
-        // try {
-        //     const response = await axios.get(
-        //       `https://gateway.marvel.com//v1/public/characters?apikey=205601498972ebaa09436ade5df812b5&ts=1&hash=e4e885d0262f63d194a13bcfa7acf555&limit=2`
-              // `https://gateway.marvel.com//v1/public/comics?apikey=205601498972ebaa09436ade5df812b5&ts=1&hash=e4e885d0262f63d194a13bcfa7acf555&limit=4`
-            // )
-        
-        // console.log(response.data)
-        // setMarvelSuperheroes(response.data)
 
         console.log(response.data.data.results)
         setMarvelSuperheroes(response.data.data.results) // Marvel API format includes data section to access info
