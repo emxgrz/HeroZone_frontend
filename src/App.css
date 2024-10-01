@@ -87,6 +87,32 @@ h1 {
   /* text-shadow: 4px 8px 16px rgba(249, 255, 185, 0.244); */
 }
 
+#superhero-details {
+  background-color: #202020;
+  color: rgb(217, 217, 217);
+}
+
+#superhero-details img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 4px 8px 24px #ffde217e;
+}
+
+#superhero-details h2 {
+  color: #e23636;
+  padding: 25px;
+  font-size: 2.5rem;
+  font-family: "Bangers", system-ui;
+}
+
+#superhero-details p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Play", sans-serif;
+}
+
 
 @media (max-width: 768px) {
 
@@ -95,6 +121,14 @@ h1 {
     padding-top: 2rem;
     padding-bottom: 1rem;
     padding: 0.2;
+  }
+
+  h2 {
+    font-size: 35px !important;
+  }
+
+  #superhero-details p {
+    font-size: 1rem;
   }
 
   .navbar-toggler {

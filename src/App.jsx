@@ -11,6 +11,7 @@ import NewSuperHeroes from './pages/NewSuperHeroes.jsx'
 import CustomSuperHero from './pages/CustomSuperHero.jsx'
 import CreateSuperHero from './pages/CreateSuperHero.jsx'
 import SuperHeroDetails from './pages/SuperHeroDetails.jsx'
+// import CustomSuperHeroDetails from './pages/CustomSuperHeroDetails.jsx'
 
 
 function App() {
@@ -32,12 +33,15 @@ function App() {
           <Route path="/new-superheroes" element={<NewSuperHeroes newSuperheroes={newSuperheroes} setNewSuperheroes={setNewSuperheroes} />} />
           <Route path="/custom-superhero/:id" element={<CustomSuperHero setNewSuperheroes={setNewSuperheroes} />} />
           <Route path="/create-superhero/:id" element={<CreateSuperHero setNewSuperheroes={setNewSuperheroes} />} />
+
+          <Route path="/superhero-details/:id" element={<SuperHeroDetails />} />
+          {/* <Route path="/custom-superhero-details/:id" element={<CustomSuperHeroDetails />} /> */}
      
 
           {/* <Route path="/favorite-superheroes" element={<FavoriteSuperHeroes />} /> */}
           {/* <Route path="/comics-page" element={<ComicsPage />} /> */}
           {/* <Route path="/comic-details/:id" element={<ComicDetails />} /> */}
-          <Route path="/superhero-details/:id" element={<SuperHeroDetails />} />
+          
 
           {/* <Route path="/superhero-details" element={<SuperHeroDetails />} /> */}
 
