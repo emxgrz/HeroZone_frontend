@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"; // check if useState is needed when running
 import axios from 'axios';
-import NewSuperHeroCard from "./SuperHeroCard";
+import NewSuperHeroCard from "./NewSuperHeroCard";
 
 function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
   // function NewSuperHeroesList() {
@@ -35,6 +35,7 @@ function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
         newSuperheroes.map((newSuperhero) => (
           <NewSuperHeroCard
           key={newSuperhero.id}
+          id={newSuperhero.id}
           name={newSuperhero.name}
           image={newSuperhero.image}  // direct URL to the image, changed in custom + added in new
           description={newSuperhero.description ? newSuperhero.description : 'No description available - yet.'}

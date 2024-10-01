@@ -27,12 +27,12 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
         const heroesWithImages = response.data.data.results.filter(hero =>
           hero.thumbnail && hero.thumbnail.path && !hero.thumbnail.path.includes('image_not_available')
         )
-        console.log(heroesWithImages)
+        // console.log(heroesWithImages)
 
         // const shuffledHeroes = shuffleArray(response.data.data.results)
         const shuffledHeroes = shuffleArray(heroesWithImages)
         setMarvelSuperheroes(shuffledHeroes.slice(0, 100)) // check LIMIT !!! 
-        console.log(shuffledHeroes)
+        // console.log(shuffledHeroes)
 
 
         // console.log(response.data.data.results)

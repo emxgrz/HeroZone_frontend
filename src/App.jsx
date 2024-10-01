@@ -28,26 +28,30 @@ function App() {
 
         <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Home marvelSuperheroes={marvelSuperheroes} setMarvelSuperheroes={setMarvelSuperheroes} />} />
-          <Route path="/new-superheroes" element={<NewSuperHeroes newSuperheroes={newSuperheroes} setNewSuperheroes={setNewSuperheroes} />} />
-          <Route path="/custom-superhero/:id" element={<CustomSuperHero setNewSuperheroes={setNewSuperheroes} />} />
-          <Route path="/create-superhero/:id" element={<CreateSuperHero setNewSuperheroes={setNewSuperheroes} />} />
+        <div className="content">
 
-          <Route path="/superhero-details/:id" element={<SuperHeroDetails />} />
-          <Route path="/custom-superhero-details/:id" element={<CustomSuperHeroDetails />} />
-     
+          <Routes>
+            <Route path="/" element={<Home marvelSuperheroes={marvelSuperheroes} setMarvelSuperheroes={setMarvelSuperheroes} />} />
+            <Route path="/new-superheroes" element={<NewSuperHeroes newSuperheroes={newSuperheroes} setNewSuperheroes={setNewSuperheroes} />} />
+            <Route path="/custom-superhero/:id" element={<CustomSuperHero setNewSuperheroes={setNewSuperheroes} />} />
+            <Route path="/create-superhero/:id" element={<CreateSuperHero setNewSuperheroes={setNewSuperheroes} />} />
 
-          {/* <Route path="/favorite-superheroes" element={<FavoriteSuperHeroes />} /> */}
-          {/* <Route path="/comics-page" element={<ComicsPage />} /> */}
-          {/* <Route path="/comic-details/:id" element={<ComicDetails />} /> */}
-          
+            <Route path="/superhero-details/:id" element={<SuperHeroDetails />} />
+            <Route path="/custom-superhero-details/:id" element={<CustomSuperHeroDetails />} />
+      
 
-          {/* <Route path="/superhero-details" element={<SuperHeroDetails />} /> */}
+            {/* <Route path="/favorite-superheroes" element={<FavoriteSuperHeroes />} /> */}
+            {/* <Route path="/comics-page" element={<ComicsPage />} /> */}
+            {/* <Route path="/comic-details/:id" element={<ComicDetails />} /> */}
+            
 
-          <Route path="/About" element={<AboutPage />} />
-          <Route path="*" element={<Error404 />} />
-        </Routes>
+            {/* <Route path="/superhero-details" element={<SuperHeroDetails />} /> */}
+
+            <Route path="/About" element={<AboutPage />} />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+
+        </div>
 
         <Footer />
 

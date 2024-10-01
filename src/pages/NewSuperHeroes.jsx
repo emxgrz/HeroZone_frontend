@@ -5,7 +5,6 @@ function NewSuperHeroes({ newSuperheroes, setNewSuperheroes }) {
   return (
     <div>
       <NewSuperHeroesList newSuperheroes={newSuperheroes} setNewSuperheroes={setNewSuperheroes} />
-      {/* <NewSuperHeroesList /> */}
     </div>
   )
 }
