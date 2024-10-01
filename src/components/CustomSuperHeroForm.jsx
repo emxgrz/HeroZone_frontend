@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useState } from "react";
 
-function CreateOrUpdateSuperhero() {
+function CreateSuperHeroForm({setNewSuperheroes}) {
   const [name, setName] = useState("")
   const [author, setAuthor] = useState("")
   const [description, setDescription] = useState("")
@@ -32,8 +32,8 @@ function CreateOrUpdateSuperhero() {
 
 
   return (
-    <div>CreateOrUpdateSuperhero</div>
+    <div>CreateOrUpdateForm</div>
   )
 }
 
-export default CreateOrUpdateSuperhero
+export default CreateSuperHeroForm

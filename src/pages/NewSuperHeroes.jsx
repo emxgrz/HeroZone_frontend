@@ -1,6 +1,10 @@
-function NewSuperHeroes() {
+import NewSuperHeroList from "../components/NewSuperHeroesList"
+
+function NewSuperHeroes({ newSuperheroes, setNewSuperheroes }) {
   return (
-    <div>NewSuperHeroes</div>
+    <div>
+      <NewSuperHeroList newSuperheroes={newSuperheroes} setNewSuperheroes={setNewSuperheroes} />
+    </div>
   )
 }
 

@@ -1,7 +1,11 @@
+import NewSuperHeroesList from "../components/NewSuperHeroesList"
+
 function Home() {
   return (
 
-    <div>Home</div>
+    <div>
+      <NewSuperHeroesList />
+    </div>
 
   )
 }

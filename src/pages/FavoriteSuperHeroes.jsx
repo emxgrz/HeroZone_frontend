@@ -1,8 +1,8 @@
-function FavoritesSuperheroes() {
+function FavoriteSuperheroes() {
   
   return (
-    <div>FavoritesSuperheroes</div>
+    <div>FavoriteSuperheroes</div>
   )
 }
 
-export default FavoritesSuperheroes
+export default FavoriteSuperheroes

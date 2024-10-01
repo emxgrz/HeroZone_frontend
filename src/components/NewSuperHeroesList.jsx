@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react"; // check if useState is needed when running
 import axios from 'axios';
 import NewSuperHeroCard from "./SuperHeroCard";
 
-function NewSuperHeroList() {
+function NewSuperHeroesList({ newSuperheroes, setNewSuperheroes }) {
 
-  const [ newSuperheroes, setNewSuperheroes ] = useState([])
+  
 
   useEffect(() => {
     const fetchNewSuperheroes = async () => {
@@ -40,4 +40,4 @@ function NewSuperHeroList() {
   )
 }
 
-export default NewSuperHeroList
+export default NewSuperHeroesList

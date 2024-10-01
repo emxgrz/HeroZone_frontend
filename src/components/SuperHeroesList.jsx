@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react"; // check if useState is needed when running
 import axios from 'axios';
 import SuperHeroCard from "./SuperHeroCard";
 
-function SuperHeroList() {
+function SuperHeroList({ marvelSuperheroes, setMarvelSuperheroes }) {
 
-  const [ marvelSuperheroes, setMarvelSuperheroes ] = useState([])
+  
 
   useEffect(() => {
     const fetchMarvelSuperheroes = async () => {
