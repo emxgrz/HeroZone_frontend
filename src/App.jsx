@@ -10,6 +10,7 @@ import Error404 from './pages/Error404.jsx'
 import NewSuperHeroes from './pages/NewSuperHeroes.jsx'
 import CustomSuperHero from './pages/CustomSuperHero.jsx'
 import CreateSuperHero from './pages/CreateSuperHero.jsx'
+import SuperHeroDetails from './pages/SuperHeroDetails.jsx'
 
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
           {/* <Route path="/favorite-superheroes" element={<FavoriteSuperHeroes />} /> */}
           {/* <Route path="/comics-page" element={<ComicsPage />} /> */}
           {/* <Route path="/comic-details/:id" element={<ComicDetails />} /> */}
-          {/* <Route path="/superhero-details/:id" element={<SuperHeroDetails />} /> */}
+          <Route path="/superhero-details/:id" element={<SuperHeroDetails />} />
 
           {/* <Route path="/superhero-details" element={<SuperHeroDetails />} /> */}
 

@@ -58,7 +58,7 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
         <div key={marvelSuperhero.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
 
         <SuperHeroCard
-        key={marvelSuperhero.id}
+        id={marvelSuperhero.id}
         name={marvelSuperhero.name}
         image={`${marvelSuperhero.thumbnail.path}.${marvelSuperhero.thumbnail.extension}`} // follows API data format to get the image url; http correction needed?
         description={marvelSuperhero.description ? marvelSuperhero.description : 'No description available - yet.'}
