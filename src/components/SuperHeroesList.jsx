@@ -13,7 +13,7 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
             apikey: import.meta.env.VITE_API_KEY,
             ts: import.meta.env.VITE_TIMESTAMP,
             hash: import.meta.env.VITE_HASH,
-            limit: 42 // temporal limit, to be reviewed
+            limit: 24 // temporal limit, to be reviewed
           }
         })
 
@@ -34,8 +34,12 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
   // console.log(marvelSuperheroes)
 
   return (
-    <div className="marvel-superhero-list">
+
+    <div className="container" id="marvel-superhero-list">
+      <div className="row">
       {marvelSuperheroes.map((marvelSuperhero) => (
+        <div key={marvelSuperhero.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+
         <SuperHeroCard
         key={marvelSuperhero.id}
         name={marvelSuperhero.name}
@@ -45,7 +49,9 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
         // onClick={() => navigate(`/superheroes/${marvelSuperhero.id}`)} // potential DetailsPage, to review; pass as prop if used!!
 
         />
+        </div>
       ))}
+    </div>
     </div>
   )
 }

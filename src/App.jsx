@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import Home from './pages/Home.jsx'
 import Navbar from './components/Navbar.jsx'
@@ -28,11 +29,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home marvelSuperheroes={marvelSuperheroes} setMarvelSuperheroes={setMarvelSuperheroes} />} />
           <Route path="/new-superheroes" element={<NewSuperHeroes newSuperheroes={newSuperheroes} setNewSuperheroes={setNewSuperheroes} />} />
-          {/* <Route path="/new-superheroes" element={<NewSuperHeroes />} /> */}
           <Route path="/custom-superhero/:id" element={<CustomSuperHero setNewSuperheroes={setNewSuperheroes} />} />
           <Route path="/create-superhero/:id" element={<CreateSuperHero setNewSuperheroes={setNewSuperheroes} />} />
-          {/* <Route path="/custom-superhero/:id" element={<CustomSuperHero />} />
-          <Route path="/create-superhero/:id" element={<CreateSuperHero />} /> */}
+     
 
           {/* <Route path="/favorite-superheroes" element={<FavoriteSuperHeroes />} /> */}
           {/* <Route path="/comics-page" element={<ComicsPage />} /> */}
