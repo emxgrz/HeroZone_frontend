@@ -3,9 +3,10 @@ function SuperHeroCard({ name, image, description }) { // pass 'onClick' if need
 
   return (
     <div className="marvel-superhero-card">
-      <img src={image} alt={name} />
+      <img src={image} />
       <h2>{name}</h2>
-      <p>{description}</p>
+      {/* name + image only, pass other props to SHDetails.jsx (page) */}
+      {/* <p>{description}</p> */}
     </div>
   )
 }

@@ -1,10 +1,10 @@
-import NewSuperHeroesList from "../components/NewSuperHeroesList"
+import SuperHeroesList from "../components/SuperHeroesList"
 
-function Home() {
+function Home({ marvelSuperheroes, setMarvelSuperheroes }) {
   return (
 
     <div>
-      <NewSuperHeroesList />
+      <SuperHeroesList marvelSuperheroes={marvelSuperheroes} setMarvelSuperheroes={setMarvelSuperheroes} />
     </div>
 
   )
