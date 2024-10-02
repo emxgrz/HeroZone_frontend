@@ -72,11 +72,6 @@ function CustomSuperHeroForm ({ setNewSuperheroes }) {
 
     setEditingHero(null); 
   }
-  catch (error) {
-    console.log("Error fetching hero details: ", error)
-    setLoading(false)
-  }
-  }
 
 
 
