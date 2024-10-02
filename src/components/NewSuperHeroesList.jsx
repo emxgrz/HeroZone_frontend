@@ -3,19 +3,15 @@ import axios from 'axios';
 import NewSuperHeroCard from "./NewSuperHeroCard";
 
 function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
-  // function NewSuperHeroesList() {
   // console.log(newSuperheroes, setNewSuperheroes)
 
   useEffect(() => {
     const fetchNewSuperheroes = async () => {
       try {
-        // const response = await axios.get(`${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes`)
-        // console.log('JSON server URL:', import.meta.env.VITE_JSON_SERVER_URL) // undefined, check
         const response = await axios.get(`${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes`)
-        // console.log(response.data)
-        setNewSuperheroes(response.data) // sets newsuperheroes data from JSON server
-        
 
+        setNewSuperheroes(response.data) // sets newsuperheroes data from JSON server
+        // console.log(response.data)
 
       } catch (error) {
         console.log('Error fetching New SuperHeroes: ', error)
