@@ -1,11 +1,11 @@
 import CreateSuperHeroForm from "../components/CreateSuperheroForm"
 
-function CreateSuperHero({setNewSuperheroes}) {
+function CreateSuperHero({newSuperheroes, setNewSuperheroes}) {
   
 
   return (
     <div>
-      <CreateSuperHeroForm />
+      <CreateSuperHeroForm newSuperheroes={newSuperheroes} setNewSuperheroes={setNewSuperheroes}/>
     </div>
   )
 }

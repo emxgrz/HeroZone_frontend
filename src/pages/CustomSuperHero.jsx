@@ -3,7 +3,7 @@ import CustomSuperHeroForm from "../components/CustomSuperHeroForm"
 function CustomSuperHero({setNewSuperheroes}) {
   return (
     <div>
-      <CustomSuperHeroForm />
+      <CustomSuperHeroForm setNewSuperheroes={setNewSuperheroes}/>
     </div>
   )
 }

@@ -13,7 +13,7 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
             apikey: import.meta.env.VITE_API_KEY,
             ts: import.meta.env.VITE_TIMESTAMP,
             hash: import.meta.env.VITE_HASH,
-            limit: 42 // temporal limit, to be reviewed
+            limit: 1 // temporal limit, to be reviewed
           }
         })
 
