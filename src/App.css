@@ -87,14 +87,8 @@ h1 {
   transition: opacity 10s ease-in-out;
 }
 
-
-@keyframes fadeInOut {
-  50%, 100% { opacity: 5; }
-  50% { opacity: 10; }
-}
-
-h1 {
-  animation: fadeInOut 10s linear infinite;
+.home-title, .new-super-title {
+  margin-top: 50px;
 }
 
 #marvel-superhero-card, #new-superhero-card {
@@ -163,7 +157,7 @@ h1 {
   font-family: "Play", sans-serif;
 }
 
-#edit-button, #save-button {
+#edit-button, #form-button {
   font-family: "Bangers", system-ui;
   font-size: 21px;
   letter-spacing: 2px;
@@ -172,11 +166,11 @@ h1 {
   border: solid 2px white;
   color: white;
   box-shadow: 4px 4px 15px rgba(254, 254, 254, 0.373);
-
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-top: 35px !important;
 }
 
-#edit-button:hover, #edit-button:active, #save-button:hover, #save-button:active   {
+#edit-button:hover, #edit-button:active, #form-button:hover, #form-button:active   {
   transform: scale(1.05);
   box-shadow: 4px 4px 15px rgba(255, 222, 33, 0.549);
   background-color: #FFDE21;
@@ -201,7 +195,8 @@ form h1 {
 }
 
 form h3 {
-  font-size: 22px;
+  font-size: 24px;
+  letter-spacing: 4px;
   color: #FFDE21;
 }
 

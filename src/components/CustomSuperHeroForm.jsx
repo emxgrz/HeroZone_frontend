@@ -128,8 +128,8 @@ function CustomSuperHeroForm({ setNewSuperheroes }) {
         </div>
         {/* <button type="submit">Save</button> */}
 
-        <Button
-            id="save-button"
+          <Button
+            id="form-button"
             variant="warning"
             className="mt-4">
             Save
