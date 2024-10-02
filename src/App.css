@@ -162,6 +162,25 @@ h1 {
   font-family: "Play", sans-serif;
 }
 
+#edit-button {
+  font-family: "Bangers", system-ui;
+  letter-spacing: 2px;
+  background-color: #e23636;
+  min-width: 100px;
+  border: solid 2px white;
+  color: white;
+  box-shadow: 4px 4px 15px rgba(254, 254, 254, 0.373);
+
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#edit-button:hover, #edit-button:active  {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 15px rgba(255, 222, 33, 0.549);
+  background-color: #FFDE21;
+  color: #202020;
+}
+
 .footer {
   background-color: #202020;
   border-top: 3px solid #e23636;
