@@ -23,7 +23,7 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
     };
 
     try {
-      const response = await fetch('http://localhost:4000/newsuperheroes', {
+      const response = await fetch(`${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -11,7 +11,7 @@ function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
       try {
         // const response = await axios.get(`${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes`)
         // console.log('JSON server URL:', import.meta.env.VITE_JSON_SERVER_URL) // undefined, check
-        const response = await axios.get(`http://localhost:4000/newsuperheroes`)
+        const response = await axios.get(`${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes`)
         // console.log(response.data)
         setNewSuperheroes(response.data) // sets newsuperheroes data from JSON server
         

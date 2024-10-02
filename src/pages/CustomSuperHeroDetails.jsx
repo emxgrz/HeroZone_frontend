@@ -12,7 +12,7 @@ function CustomSuperHeroDetails() {
   useEffect(() => {
     const fetchSuperHeroDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/newsuperheroes/${id}`)
+        const response = await axios.get(`${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes/${id}`)
         // const response = await axios.get(`http://localhost:4000/newsuperheroes/3`) // test !!!
         setSuperHero(response.data) // fetch from JSON server
         setLoading(false)
