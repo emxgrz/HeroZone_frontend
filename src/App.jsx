@@ -12,12 +12,14 @@ import CustomSuperHero from './pages/CustomSuperHero.jsx'
 import CreateSuperHero from './pages/CreateSuperHero.jsx'
 import SuperHeroDetails from './pages/SuperHeroDetails.jsx'
 import CustomSuperHeroDetails from './pages/CustomSuperHeroDetails.jsx'
-
+import ComicsPage from './pages/ComicsPage.jsx'
+import ComicDetails from './pages/ComicDetails.jsx'
 
 function App() {
   
   const [ marvelSuperheroes, setMarvelSuperheroes ] = useState([])
   const [ newSuperheroes, setNewSuperheroes ] = useState([])
+  const [comics, setComics] = useState([])
 
 
   // console.log(newSuperheroes, setNewSuperheroes)
@@ -41,8 +43,8 @@ function App() {
       
 
             {/* <Route path="/favorite-superheroes" element={<FavoriteSuperHeroes />} /> */}
-            {/* <Route path="/comics-page" element={<ComicsPage />} /> */}
-            {/* <Route path="/comic-details/:id" element={<ComicDetails />} /> */}
+            <Route path="/comics-page" element={<ComicsPage  comics={comics} setComics={setComics} />}  />
+            <Route path="/comic-details/:id" element={<ComicDetails />} />
             
 
             {/* <Route path="/superhero-details" element={<SuperHeroDetails />} /> */}
