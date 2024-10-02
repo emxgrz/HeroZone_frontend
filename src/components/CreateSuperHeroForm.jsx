@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'; // Suponiendo que usas react-router-dom para navegación
+import { Button } from "react-bootstrap";
 
 function CreateSuperHeroForm({ setNewSuperheroes }) {
   const [name, setName] = useState("");
@@ -23,7 +24,7 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
     };
 
     try {
-      const response = await fetch('http://localhost:4000/newsuperheroes', {
+      const response = await fetch(`${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +54,8 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
     <div>
       <form onSubmit={handleAddSuperhero} className="newSuperHeroForm">
         <h1>Create your new superhero!</h1>
-        <div className="nameChange">
+        {/* <div className="nameChange"> */}
+        <div className="mb-3">
           <h3>Name:</h3>
           <input
             onChange={handleNameChange}
@@ -63,7 +65,9 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
             required
           />
         </div>
-        <div className="descriptionChange">
+
+        {/* <div className="descriptionChange"> */}
+        <div className="mb-3">
           <h3>Description:</h3>
           <input
             onChange={handleDescriptionChange}
@@ -73,7 +77,9 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
             required
           />
         </div>
-        <div className="imageChange">
+
+        {/* <div className="imageChange"> */}
+        <div className="mb-3">
           <h3>Image:</h3>
           <input
             onChange={handleImageChange}
@@ -83,7 +89,14 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
             required
           />
         </div>
-        <button type="submit">Add Superhero</button>
+
+        {/* <button type="submit">Add Superhero</button> */}
+        <Button
+            id="form-button"
+            variant="warning"
+            className="mt-4">
+            Add Superhero
+          </Button>
       </form>
     </div>
   );
