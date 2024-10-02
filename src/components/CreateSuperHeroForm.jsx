@@ -36,7 +36,7 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
         setNewSuperheroes((actualSuperheroes) => [createdSuperhero, ...actualSuperheroes]);
 
         
-        navigate('/');
+        navigate('/new-superheroes');
       } else {
         console.error('no se ha podido crear tu superhéroe...');
       }

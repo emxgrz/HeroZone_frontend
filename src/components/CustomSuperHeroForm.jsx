@@ -1,37 +1,44 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
 
-
-function CustomSuperHeroForm ({ setNewSuperheroes }) {
+function CustomSuperHeroForm({ setNewSuperheroes }) {
   const [editingHero, setEditingHero] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMarvelSuperheroes = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/v1/public/characters`, {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/v1/public/characters/${id}`, {
           params: {
             apikey: import.meta.env.VITE_API_KEY,
             ts: import.meta.env.VITE_TIMESTAMP,
             hash: import.meta.env.VITE_HASH,
-            limit: 1 
-          }
-        })
+            limit: 1,
+          },
+        });
 
-
-        console.log(response.data.data.results)
-        setNewSuperheroes(response.data.data.results)
-
+        const fetchedHero = response.data.data.results[0];
+        setEditingHero({
+          originalId: fetchedHero.id,
+          name: fetchedHero.name,
+          description: fetchedHero.description,
+          image: fetchedHero.thumbnail.path + '.' + fetchedHero.thumbnail.extension,
+        });
+        setLoading(false);
       } catch (error) {
-        console.log('Error fetching Marvel SuperHeroes: ', error)
+        console.log('Error fetching Marvel SuperHeroes: ', error);
+        setLoading(false);
       }
-    }
+    };
 
-    fetchMarvelSuperheroes()
-
-  }, [])
+    fetchMarvelSuperheroes();
+  }, [id]);
 
   const handleEdit = (hero) => {
-    setEditingHero({ ...hero, originalId: hero.id }); 
+    setEditingHero({ ...hero, marvelId: hero.id });
   };
 
   const handleSave = async (event) => {
@@ -41,8 +48,8 @@ function CustomSuperHeroForm ({ setNewSuperheroes }) {
       name: editingHero.name,
       description: editingHero.description,
       image: editingHero.image,
+      marvelId: id,
     };
-
 
     try {
       const response = await fetch('http://localhost:4000/newsuperheroes', {
@@ -50,36 +57,69 @@ function CustomSuperHeroForm ({ setNewSuperheroes }) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(editingHero), 
-      })
-      
+        body: JSON.stringify(newSuperhero),
+      });
 
+      if (response.ok) {
+        setNewSuperheroes((prevSuperheroes) =>
+          prevSuperheroes.map((hero) =>
+            hero.id === editingHero.originalId ? editingHero : hero
+          )
+        );
+        setEditingHero(null);
+        navigate('/new-superheroes');
+      }
     } catch (error) {
-      console.log("Error fetching hero details: ", error);
-      setLoading(false)
+      console.log('Error saving hero details: ', error);
     }
   };
 
-      if (!response.ok) {
-        console.log("error al crear hérore");
-      }
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setEditingHero((prevHero) => ({
+      ...prevHero,
+      [name]: value,
+    }));
+  };
 
-    setNewSuperheroes((prevSuperheroes) =>
-      prevSuperheroes.map((hero) =>
-        hero.id === editingHero.originalId ? editingHero : hero
-      )
-    );
-
-    setEditingHero(null); 
+  if (loading) {
+    return <p>Loading...</p>;
   }
 
-
-
   return (
-    <div>
-      
-    </div>
+    <form onSubmit={handleSave}>
+      <div>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={editingHero?.name || ''}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          value={editingHero?.description || ''}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="image">Image URL:</label>
+        <input
+          type="text"
+          id="image"
+          name="image"
+          value={editingHero?.image || ''}
+          onChange={handleChange}
+        />
+      </div>
+      <button type="submit">Save</button>
+    </form>
   );
+}
 
-
-export default CustomSuperHeroForm
+export default CustomSuperHeroForm;
