@@ -182,8 +182,7 @@ h1 {
 }
 
 .footer {
-  /* background-color: #202020; */
-  background-color: none;
+  background-color: #202020;
   border-top: 3px solid #e23636;
   font-family: "Bangers", system-ui;
   letter-spacing: 1.2px;
