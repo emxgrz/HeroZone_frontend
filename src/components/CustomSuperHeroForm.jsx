@@ -53,6 +53,12 @@ function CustomSuperHeroForm ({ setNewSuperheroes }) {
         body: JSON.stringify(editingHero), 
       });
 
+    } catch (error) {
+      console.log("Error fetching hero details: ", error);
+      setLoading(false)
+    }
+  };
+
       if (!response.ok) {
         console.log("error al crear hérore");
       }
@@ -74,6 +80,6 @@ function CustomSuperHeroForm ({ setNewSuperheroes }) {
       
     </div>
   );
-}
+
 
 export default CustomSuperHeroForm
