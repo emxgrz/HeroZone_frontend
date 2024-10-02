@@ -1,8 +1,11 @@
-import { useEffect } from "react"; // check if useState is needed when running
+import { useEffect, useState } from "react"; // useState for loading-spinner
 import axios from 'axios';
 import SuperHeroCard from "./SuperHeroCard";
+import ScaleLoader from 'react-spinners/ScaleLoader'; 
 
 function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
+
+  const [loading, setLoading] = useState(true)
 
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -33,6 +36,7 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
         const shuffledHeroes = shuffleArray(heroesWithImages)
         setMarvelSuperheroes(shuffledHeroes.slice(0, 100)) // check LIMIT !!! 
         // console.log(shuffledHeroes)
+        setLoading(false)
 
 
         // console.log(response.data.data.results)
@@ -40,6 +44,7 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
 
       } catch (error) {
         console.log('Error fetching Marvel SuperHeroes: ', error)
+        setLoading(false)
       }
     }
 
@@ -49,6 +54,14 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
 
   // console.log(setMarvelSuperheroes)
   // console.log(marvelSuperheroes)
+
+  if (loading) {
+    return (
+      <div className="loader-container">
+        <ScaleLoader height={50} color="#e23636" />
+      </div>
+    );
+  }
 
   return (
 

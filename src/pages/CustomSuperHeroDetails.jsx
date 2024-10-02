@@ -1,10 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import GridLoader from "react-spinners/GridLoader"; 
+
 
 function CustomSuperHeroDetails() {
-  const { id } = useParams(); 
-  const [superHero, setSuperHero] = useState(null);
+  const { id } = useParams()
+  const [superHero, setSuperHero] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchSuperHeroDetails = async () => {
@@ -12,17 +15,27 @@ function CustomSuperHeroDetails() {
         const response = await axios.get(`http://localhost:4000/newsuperheroes/${id}`)
         // const response = await axios.get(`http://localhost:4000/newsuperheroes/3`) // test !!!
         setSuperHero(response.data) // fetch from JSON server
+        setLoading(false)
 
       } catch (error) {
         console.log("Error fetching hero details: ", error)
+        setLoading(false)
       }
     };
 
     fetchSuperHeroDetails();
-  }, [id]);
+  }, [id]) // useEffect happens again if id happens, making a new API call
+
+  if (loading) {
+    return (
+      <div className="loader-container">
+        <GridLoader height={50} color="#e23636" />
+      </div>
+    )
+  }
 
   if (!superHero) {
-    return <p>Loading...</p>; // add managing animations !!!
+    return <p>oops, no superhero found</p>
   }
 
   const { name, description, image } = superHero // JSON data

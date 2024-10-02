@@ -10,11 +10,6 @@ function NewSuperHeroCard({ id, name, image }) {
 
 
   return (
-    // <div className="new-superhero-card" onClick={handleClick}>
-    //   <img src={image} alt={name} style={{ width: '100%', objectFit: 'cover' }} />
-    //   <h2>{name}</h2>
-    //   <p>{description || "No description available."}</p>
-    // </div>
 
     <div
       className="card text-center mb-4"
