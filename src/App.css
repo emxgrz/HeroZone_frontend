@@ -1,42 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  line-height: 1.5;
+  background-color: #202020;
+  font-family: "Roboto", sans-serif;
+  /* min-height: 100vh; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+  height: 100%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  max-height: 100%;
+  color: #e23636 !important;
+  background-color: #202020;
+  padding-top: 65px;
+  height: 100%;
+}
+
+.navbar {
+  background-color: #202020 !important; 
+  border-bottom: 3px solid #e23636;
+  font-family: "Bangers", system-ui;
+  letter-spacing: 2px;
+  padding: 15px;
+  margin-bottom: 30px;
+  z-index: 77;
+}
+
+.navbar-brand, .nav-link {
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.nav-link:hover, .navbar-brand:hover {
+  color: #202020 !important;
+  background-color: #FFDE21;
+}
+
+.nav-link {
+  color: #e23636 !important;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.nav-link.active {
+  background-color: #e23636;
+  color: #202020 !important;
+  border-bottom: 2px solid #e23636;
+  box-shadow: 0 4px 15px rgba(226, 54, 54, 0.6);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: rgba(226, 54, 54, 0.6);
+  color: #ededed !important;
+}
+
+.navbar-toggler:hover {
+  background-color: #979797; /* Change background color on hover */
+}
+
+h1 {
+  font-family: "Bangers", system-ui;
+  color: #FFDE21;
+  font-size: 70px !important;
+  padding: 2.4rem;
+  transition: opacity 10s ease-in-out;
+}
+
+
+@keyframes fadeInOut {
+  50%, 100% { opacity: 5; }
+  50% { opacity: 10; }
+}
+
+h1 {
+  animation: fadeInOut 10s linear infinite;
+}
+
+#marvel-superhero-card, #new-superhero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  height: auto;
+  border-radius: 17px;
+  box-shadow: 2px 4px 8px rgba(147, 147, 147, 0.15);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: #1c1c1c14;
+  color: #e23636;
+  font-family: "Bangers", system-ui;
+  letter-spacing: 2px;
+}
+
+#new-superhero-card {
+
+  margin-right: 20px;
+  margin-left: 20px;
+
+}
+
+#marvel-superhero-card img, #new-superhero-card img {
+  max-height: 200px; 
+  width: 100%;
+  border-radius: 17px;
+  margin-top: 0;
+}
+
+#marvel-superhero-card:hover, #new-superhero-card:hover  {
+  transform: scale(1.05);
+  box-shadow: 4px 8px 16px rgba(220, 220, 220, 0.391);
+  /* text-shadow: 4px 8px 16px rgba(249, 255, 185, 0.244); */
+}
+
+#superhero-details {
+  background-color: #202020;
+  color: rgb(217, 217, 217);
+  min-height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#superhero-details img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 25px !important;
+  box-shadow: 4px 8px 24px #ffde217e;
+}
+
+#superhero-details h2 {
+  color: #ffde21;
+  padding: 25px;
+  font-size: 2.5rem;
+  font-family: "Bangers", system-ui;
+}
+
+#superhero-details p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Play", sans-serif;
+}
+
+.footer {
+  background-color: #202020;
+  border-top: 3px solid #e23636;
+  font-family: "Bangers", system-ui;
+  letter-spacing: 1.2px;
+  display: block;
+  margin-bottom: 0;
+  margin-top: auto;
+  padding: 15px !important;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #e23636 !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 50px !important;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding: 0.2;
   }
-  to {
-    transform: rotate(360deg);
+
+  h2 {
+    font-size: 35px !important;
+  }
+
+  #superhero-details p {
+    font-size: 1rem;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  /* .navbar-nav {
+    display: none;
+  } */
+
+  .navbar-toggler.collapsed + .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  
+  #marvel-superhero-card {
+    margin: 1rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
