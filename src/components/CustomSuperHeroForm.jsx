@@ -51,7 +51,8 @@ function CustomSuperHeroForm ({ setNewSuperheroes }) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(editingHero), 
-      });
+      })
+      
 
       if (!response.ok) {
         console.log("error al crear hérore");
@@ -65,7 +66,11 @@ function CustomSuperHeroForm ({ setNewSuperheroes }) {
 
     setEditingHero(null); 
   }
-
+  catch (error) {
+    console.log("Error fetching hero details: ", error)
+    setLoading(false)
+  }
+  }
 
 
 
