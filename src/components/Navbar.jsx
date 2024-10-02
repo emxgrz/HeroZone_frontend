@@ -30,7 +30,7 @@ function Navbar() {
             </li> */}
 
             <li className="nav-item">
-              <Link className="nav-link" to="/create-character" onClick={handleNavLinkClick}>Create Your SuperHero</Link>
+              <Link className="nav-link" to="/create-superhero/:id" onClick={handleNavLinkClick}>Create Your SuperHero</Link>
             </li>
           </ul>
         </div>
