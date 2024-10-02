@@ -69,7 +69,7 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
         {/* <div className="descriptionChange"> */}
         <div className="mb-3">
           <h3>Description:</h3>
-          <input
+          <textarea
             onChange={handleDescriptionChange}
             value={description}
             type="text"
@@ -80,7 +80,7 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
 
         {/* <div className="imageChange"> */}
         <div className="mb-3">
-          <h3>Image:</h3>
+          <h3>Image URL:</h3>
           <input
             onChange={handleImageChange}
             value={image}

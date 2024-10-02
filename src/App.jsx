@@ -36,7 +36,7 @@ function App() {
             <Route path="/" element={<Home marvelSuperheroes={marvelSuperheroes} setMarvelSuperheroes={setMarvelSuperheroes} />} />
             <Route path="/new-superheroes" element={<NewSuperHeroes newSuperheroes={newSuperheroes} setNewSuperheroes={setNewSuperheroes} />} />
             <Route path="/custom-superhero/:id" element={<CustomSuperHero setNewSuperheroes={setNewSuperheroes} />} />
-            <Route path="/create-superhero/:id" element={<CreateSuperHero setNewSuperheroes={setNewSuperheroes} />} />
+            <Route path="/create-superhero" element={<CreateSuperHero setNewSuperheroes={setNewSuperheroes} />} />
 
             <Route path="/superhero-details/:id" element={<SuperHeroDetails />} />
             <Route path="/custom-superhero-details/:id" element={<CustomSuperHeroDetails newSuperheroes={newSuperheroes} setNewSuperheroes={setNewSuperheroes} />} />

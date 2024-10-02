@@ -76,7 +76,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
           <p>{description || "No description available"}</p>
 
           <Button
-            id="edit-button"
+            id="delete-button"
             variant="warning"
             onClick={() => handleDelete(superHero.id)}
             className="mt-4">

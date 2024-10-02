@@ -3,11 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import GridLoader from "react-spinners/GridLoader"; 
+import { Button } from "react-bootstrap";
+
 
 function ComicDetails() {
   const { id } = useParams()
   const [detailComic, setDetailComic] = useState(null)
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchDetailComicDetails = async () => {
@@ -44,7 +47,9 @@ function ComicDetails() {
     return <p>oops, no comic found</p>
   }
 
- 
+  const handleBack = () => {
+    navigate(-1)
+  }
 
   const { title, creators, thumbnail } = detailComic;
   const names = creators.items.map(item => item.name)
@@ -58,6 +63,13 @@ function ComicDetails() {
           <h2 className="mb-3">{title}</h2>
           <p>{names[0] || "No description available"}</p>
 
+          <Button
+            id="form-button"
+            variant="warning"
+            onClick={handleBack}
+            className="mt-4">
+            Back
+          </Button>
 
         </div>
       </div>

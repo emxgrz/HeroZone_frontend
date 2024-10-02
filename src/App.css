@@ -39,11 +39,19 @@ html, body {
   background-color: #202020 !important; 
   border-bottom: 3px solid #e23636;
   font-family: "Bangers", system-ui;
-  letter-spacing: 2px;
+  letter-spacing: 1.3px;
   padding: 15px;
   margin-bottom: 30px;
   z-index: 77;
 }
+
+.nav-item {
+  padding-left: 10px !important;
+}
+
+/* #create-your-sh {
+  text-shadow: 2px 2px 2px rgba(147, 147, 147, 0.376);
+} */
 
 .navbar-brand, .nav-link {
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -99,25 +107,31 @@ h1 {
   margin: 10px;
   height: auto;
   border-radius: 17px;
-  box-shadow: 2px 4px 8px rgba(147, 147, 147, 0.15);
+
+  border: 2px solid white;
+  box-shadow: 2px 4px 8px rgba(147, 147, 147, 0.5);
+  /* box-shadow: 2px 4px 8px rgba(147, 147, 147, 0.15); */
+
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   background-color: #1c1c1c14;
   color: #e23636;
   font-family: "Bangers", system-ui;
   letter-spacing: 2px;
+  cursor: pointer;
 }
 
 #new-superhero-card {
-
   margin-right: 20px;
   margin-left: 20px;
-
 }
 
 #marvel-superhero-card img, #new-superhero-card img {
   max-height: 200px; 
   width: 100%;
-  border-radius: 17px;
+
+  border-radius: 15px 15px 0 0;
+  /* border-radius: 17px; */
+ 
   margin-top: 0;
 }
 
@@ -157,24 +171,45 @@ h1 {
   font-family: "Play", sans-serif;
 }
 
-#edit-button, #form-button {
+#edit-button, #form-button, #delete-button {
   font-family: "Bangers", system-ui;
   font-size: 21px;
   letter-spacing: 2px;
-  background-color: #e23636;
+
   min-width: 150px;
   border: solid 2px white;
-  color: white;
+
   box-shadow: 4px 4px 15px rgba(254, 254, 254, 0.373);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin-top: 35px !important;
+  margin-top: 50px !important;
+}
+
+#edit-button, #form-button {
+  background-color: #e23636;
+  color: white;
 }
 
 #edit-button:hover, #edit-button:active, #form-button:hover, #form-button:active   {
   transform: scale(1.05);
   box-shadow: 4px 4px 15px rgba(255, 222, 33, 0.549);
   background-color: #FFDE21;
-  color: #202020;
+  color:#202020;
+  transform: scale(0.98);
+}
+
+#delete-button {
+  background-color: #dadada2a;
+  color: white;
+}
+
+#delete-button:hover, #delete-button:active {
+  background-color: #dadadacc;
+  color: #e23636;
+  transform: scale(0.98);
+}
+
+.loader-container {
+  padding-top: 50px;
 }
 
 form {
@@ -203,12 +238,12 @@ form h3 {
 input, textarea {
   width: 100%;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 15px;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-family: "Play", sans-serif;
-  background-color: #e2e2e2;
+  background-color: #d3d3d3;
   color: #303030;
 }
 
@@ -232,7 +267,6 @@ input, textarea {
 .footer a:hover {
   color: #FFDE21 !important;
 }
-
 
 @media (max-width: 768px) {
 
