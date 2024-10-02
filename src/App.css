@@ -16,7 +16,7 @@
 
 .content {
   flex: 1;
-  padding: 20px;
+  padding: 10px;
   overflow: auto;
   height: 100%;
 }
@@ -31,7 +31,7 @@ html, body {
   max-height: 100%;
   color: #e23636 !important;
   background-color: #202020;
-  padding-top: 65px;
+  padding-top: 25px;
   height: 100%;
 }
 
@@ -82,7 +82,8 @@ h1 {
   font-family: "Bangers", system-ui;
   color: #FFDE21;
   font-size: 70px !important;
-  padding: 2.4rem;
+  margin-top: 1rem;
+  padding-bottom: 3rem;
   transition: opacity 10s ease-in-out;
 }
 
@@ -162,11 +163,12 @@ h1 {
   font-family: "Play", sans-serif;
 }
 
-#edit-button {
+#edit-button, #save-button {
   font-family: "Bangers", system-ui;
+  font-size: 21px;
   letter-spacing: 2px;
   background-color: #e23636;
-  min-width: 100px;
+  min-width: 150px;
   border: solid 2px white;
   color: white;
   box-shadow: 4px 4px 15px rgba(254, 254, 254, 0.373);
@@ -174,11 +176,45 @@ h1 {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-#edit-button:hover, #edit-button:active  {
+#edit-button:hover, #edit-button:active, #save-button:hover, #save-button:active   {
   transform: scale(1.05);
   box-shadow: 4px 4px 15px rgba(255, 222, 33, 0.549);
   background-color: #FFDE21;
   color: #202020;
+}
+
+form {
+  background-color: #1c1c1c14;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: "Bangers", sans-serif;
+  color: #e23636;
+}
+
+form h1 {
+  color: #FFDE21;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+form h3 {
+  font-size: 22px;
+  color: #FFDE21;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: "Play", sans-serif;
+  background-color: #e2e2e2;
+  color: #303030;
 }
 
 .footer {
@@ -189,7 +225,7 @@ h1 {
   display: block;
   margin-bottom: 0;
   margin-top: auto;
-  padding: 15px !important;
+  padding: 25px !important;
 }
 
 .footer a {
@@ -199,7 +235,7 @@ h1 {
 }
 
 .footer a:hover {
-  color: #ffffff;
+  color: #FFDE21 !important;
 }
 
 
@@ -207,7 +243,7 @@ h1 {
 
   h1 {
     font-size: 50px !important;
-    padding-top: 2rem;
+    padding-top: 0.5rem;
     padding-bottom: 2rem;
     padding: 0.2;
   }
@@ -237,6 +273,7 @@ h1 {
   .navbar {
     padding-right: 20px;
     padding-left: 20px;
+    margin-bottom: 2rem;
   }
   
   #marvel-superhero-card {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Button } from "react-bootstrap";
 
 function CustomSuperHeroForm({ setNewSuperheroes }) {
   const [editingHero, setEditingHero] = useState(null);
@@ -87,38 +88,54 @@ function CustomSuperHeroForm({ setNewSuperheroes }) {
   }
 
   return (
-    <form onSubmit={handleSave}>
-      <div>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={editingHero?.name || ''}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="description">Description:</label>
-        <textarea
-          id="description"
-          name="description"
-          value={editingHero?.description || ''}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="image">Image URL:</label>
-        <input
-          type="text"
-          id="image"
-          name="image"
-          value={editingHero?.image || ''}
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit">Save</button>
-    </form>
+    <div className="container my-5">
+      <form onSubmit={handleSave}>
+
+        <h1>Edit your superhero</h1>
+        <div className="mb-3">
+            {/* <label htmlFor="name">Name:</label> */}
+            <h3>Name:</h3>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={editingHero?.name || ''}
+              onChange={handleChange}
+            />
+          </div>
+ 
+        <div className="mb-3">
+          {/* <label htmlFor="description">Description:</label> */}
+          <h3>Description:</h3>
+          <textarea
+            id="description"
+            name="description"
+            value={editingHero?.description || ''}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="mb-3">
+          {/* <label htmlFor="image">Image URL:</label> */}
+          <h3>Image URL:</h3>
+          <input
+            type="text"
+            id="image"
+            name="image"
+            value={editingHero?.image || ''}
+            onChange={handleChange}
+          />
+        </div>
+        {/* <button type="submit">Save</button> */}
+
+        <Button
+            id="save-button"
+            variant="warning"
+            className="mt-4">
+            Save
+          </Button>
+      </form>
+    </div>
   );
 }
 
