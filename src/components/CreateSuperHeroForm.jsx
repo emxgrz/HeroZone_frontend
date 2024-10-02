@@ -92,6 +92,7 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
 
         {/* <button type="submit">Add Superhero</button> */}
         <Button
+        type="submit"
             id="form-button"
             variant="warning"
             className="mt-4">

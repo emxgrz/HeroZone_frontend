@@ -51,6 +51,8 @@ function SuperHeroDetails() {
     navigate(`/custom-superhero/${id}`) // using the marvel id for url to re-use in the next page/component (useParams)
   }
 
+  
+
   const { name, description, thumbnail } = superHero;
   const imageUrl = `${thumbnail.path}.${thumbnail.extension}`;
 
