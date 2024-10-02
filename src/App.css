@@ -304,6 +304,10 @@ input, textarea {
     padding-left: 20px;
     margin-bottom: 2rem;
   }
+
+  .search-bar {
+    width: 80% !important;
+  }
   
   #marvel-superhero-card {
     margin: 1rem;
