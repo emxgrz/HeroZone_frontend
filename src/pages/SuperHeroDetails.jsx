@@ -1,12 +1,16 @@
-import { useParams } from "react-router-dom";
+
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import GridLoader from "react-spinners/GridLoader"; 
+import { Button } from "react-bootstrap";
 
 function SuperHeroDetails() {
   const { id } = useParams()
   const [superHero, setSuperHero] = useState(null)
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchSuperHeroDetails = async () => {
@@ -43,6 +47,10 @@ function SuperHeroDetails() {
     return <p>oops, no superhero found</p>
   }
 
+  const handleEditClick = () => {
+    navigate(`/custom-superhero/${id}`) // using the marvel id for url to re-use in the next page/component (useParams)
+  }
+
   const { name, description, thumbnail } = superHero;
   const imageUrl = `${thumbnail.path}.${thumbnail.extension}`;
 
@@ -53,6 +61,15 @@ function SuperHeroDetails() {
           <img src={imageUrl} alt={name} className="img-fluid rounded mb-4" />
           <h2 className="mb-3">{name}</h2>
           <p>{description || "No description available"}</p>
+
+          <Button
+            id="edit-button"
+            variant="warning"
+            onClick={handleEditClick}
+            className="mt-4">
+            Edit
+          </Button>
+
         </div>
       </div>
     </div>
