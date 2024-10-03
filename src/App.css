@@ -107,11 +107,8 @@ h1 {
   margin: 10px;
   height: auto;
   border-radius: 17px;
-
   border: 2px solid white;
   box-shadow: 2px 4px 8px rgba(147, 147, 147, 0.5);
-  /* box-shadow: 2px 4px 8px rgba(147, 147, 147, 0.15); */
-
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   background-color: #1c1c1c14;
   color: #e23636;
@@ -120,25 +117,21 @@ h1 {
   cursor: pointer;
 }
 
-#new-superhero-card {
-  margin-right: 20px;
-  margin-left: 20px;
+#new-superhero-card, .character-list {
+  margin-right: 25px;
+  margin-left: 25px;
 }
 
 #marvel-superhero-card img, #new-superhero-card img {
   max-height: 200px; 
   width: 100%;
-
   border-radius: 15px 15px 0 0;
-  /* border-radius: 17px; */
- 
   margin-top: 0;
 }
 
 #marvel-superhero-card:hover, #new-superhero-card:hover  {
   transform: scale(1.05);
   box-shadow: 4px 8px 16px rgba(220, 220, 220, 0.391);
-  /* text-shadow: 4px 8px 16px rgba(249, 255, 185, 0.244); */
 }
 
 #superhero-details {
@@ -289,10 +282,6 @@ input, textarea {
     display: block;
   }
 
-  /* .navbar-nav {
-    display: none;
-  } */
-
   .navbar-toggler.collapsed + .navbar-nav {
     display: flex;
     flex-direction: column;
@@ -310,6 +299,12 @@ input, textarea {
   }
   
   #marvel-superhero-card {
+    margin: 1rem;
+  }
+
+  #new-superhero-card, .character-list {
+    /* margin-right: 20px;
+    margin-left: 20px; */
     margin: 1rem;
   }
 }
