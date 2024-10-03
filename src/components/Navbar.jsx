@@ -20,7 +20,7 @@ function Navbar() {
           <ul className="navbar-nav">    
 
             <li className="nav-item">
-              <Link className="nav-link" to="/" onClick={handleNavLinkClick}> Marvel Superheroes </Link>
+              <Link className="nav-link" to="/search-marvel" onClick={handleNavLinkClick}> Marvel Superheroes </Link>
             </li>        
             <li className="nav-item">
               <Link className="nav-link" aria-current="page" to="/new-superheroes" onClick={handleNavLinkClick}> New Superheroes </Link>
