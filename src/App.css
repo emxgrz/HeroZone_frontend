@@ -90,13 +90,29 @@ h1 {
   font-family: "Bangers", system-ui;
   color: #FFDE21;
   font-size: 70px !important;
-  margin-top: 1rem;
-  padding-bottom: 3rem;
   transition: opacity 10s ease-in-out;
 }
 
 .home-title, .new-super-title {
-  margin-top: 50px;
+  padding-top: 3.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.home-main-title {
+  margin-top: 3.5rem;
+}
+
+.hero-message {
+  font-family: "Bangers", system-ui;
+  font-size: 1.3rem;
+  color: #ededed;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.carousel-container img {
+  border-radius: 15px;
+  margin-bottom: 1rem;
 }
 
 #marvel-superhero-card, #new-superhero-card {
@@ -238,6 +254,21 @@ input, textarea {
   color: #303030;
 }
 
+.no-super-found {
+  margin-top: 4rem;
+}
+
+.error-page img {
+  margin-bottom: 50px;
+  width: 100%;
+  padding: 0;
+}
+
+.marvel-api-credit {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
 .footer {
   background-color: #202020;
   border-top: 3px solid #e23636;
@@ -263,9 +294,23 @@ input, textarea {
 
   h1 {
     font-size: 50px !important;
-    padding-top: 0.5rem;
-    padding-bottom: 2rem;
-    padding: 0.2;
+  }
+
+  .home-title, .new-super-title {
+    font-size: 50px !important;
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  .home-main-title {
+    font-size: 50px !important;
+    margin-top: 3rem;
+  }
+
+  .hero-message {
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
   }
 
   h2 {

@@ -44,7 +44,7 @@ function SuperHeroDetails() {
   }
 
   if (!superHero) {
-    return <p>oops, no superhero found</p>
+    return <p className="no-super-found">oops, no superhero found</p>
   }
 
   const handleEditClick = () => {

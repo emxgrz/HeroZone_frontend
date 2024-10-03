@@ -40,7 +40,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
   }
 
   if (!superHero) {
-    return <p>oops, no superhero found</p>;
+    return <p className="mt-7">oops, no superhero found</p>;
   }
 
   const { name, description, image, marvelId } = superHero; // JSON data
