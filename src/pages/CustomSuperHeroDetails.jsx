@@ -81,24 +81,24 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
           <h2 className="mb-3">{name}</h2>
           <p>{description || "No description available"}</p>
 
+          {marvelId && ( // Solo renderiza el botón si marvelId está presente
+            <Button
+              id="edit-button"
+              onClick={() => navigate(`/superhero-details/${marvelId}`)}
+              className="mt-5 mx-auto d-block"
+            >
+              See original
+            </Button>
+          )}
+
           <Button
             id="delete-button"
             variant="warning"
             onClick={() => handleDelete(superHero.id)}
-            className="mt-4"
+            className="mt-4 mx-auto d-block"
           >
             Delete
           </Button>
-
-          {marvelId && ( // Solo renderiza el botón si marvelId está presente
-          <Button
-            id="delete-button"
-            onClick={() => navigate(`/superhero-details/${marvelId}`)}
-            className="mt-5"
-          >
-            See original superHero
-          </Button>
-        )}
         </div>
       </div>
     </div>
