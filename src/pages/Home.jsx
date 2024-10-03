@@ -55,7 +55,11 @@ function Home({ marvelSuperheroes, setMarvelSuperheroes }) {
       
     </Carousel>
     </div>
-      <h1 className="home-title">choose your superhero</h1>
+      <h1 className="home-main-title">choose your superhero</h1>
+      <p className="hero-message">
+        Pick your favorite superhero and shape their destiny.<br></br>
+        The Marvel universe is yours to command.
+      </p>
       <SuperHeroesList marvelSuperheroes={marvelSuperheroes} setMarvelSuperheroes={setMarvelSuperheroes} />
     </div>
 
