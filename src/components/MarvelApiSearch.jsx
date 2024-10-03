@@ -10,15 +10,17 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
   const [searchedCharacter, setSearchedCharacter] = useState("");
   const [loading, setLoading] = useState(false);
   const [searchOn, setSearchOn] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    setLoading(true)
+  }, []);
 
   useEffect(() => {
     const delayAPICalls = setTimeout(() => {
-      const fetchCharacters = async () => {
-        if (searchedCharacter.length >= 3) {
-          setLoading(true);
-          setSearchOn(true)
+      if (searchedCharacter.length >= 3) {
+        setSearchOn(true);
+        const fetchCharacters = async () => {
           try {
             const response = await axios.get(
               `${import.meta.env.VITE_API_URL}/v1/public/characters`,
@@ -35,24 +37,25 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
             setMarvelSuperheroes(response.data.data.results);
           } catch (error) {
             console.log("Error fetching characters:", error);
+          } finally {
+            setLoading(false);
           }
-          setLoading(false);
-        }
-      };
-      fetchCharacters();
-    }, 2000); // set debounce/wait-time to avoid multiple calls to api
+        };
+        fetchCharacters();
+      } else {
+        setSearchOn(false);
+        setMarvelSuperheroes([]);
+      }
+    }, 2000); // waiting-time after seraching to avoid multiple api calls
 
-    return () => clearTimeout(delayAPICalls); // cleanup timeout after search changes
+    return () => clearTimeout(delayAPICalls); // clean timeout after search
+  }, [searchedCharacter]);
 
-  }, [searchedCharacter])
-
-  // if (loading) {
-  //   return (
-  //     <div className="loader-container">
-  //       <ScaleLoader height={50} color="#e23636" />
-  //     </div>
-  //   );
-  // }
+  useEffect(() => {
+    return () => {
+      setMarvelSuperheroes([]); // added to clear search when component unmounts
+    };
+  }, [setMarvelSuperheroes]);
 
   return (
     <div className="marvel-api-search">
@@ -85,7 +88,6 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
             <>
               <p>Are you sure this is a Marvel character?</p>
               <p>Hint: are you looking for Batman? Not here</p>
-
               <Button
                 id="edit-button"
                 variant="warning"
@@ -94,7 +96,6 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
                 Create Superhero
               </Button>
             </>
-            
           )}
         </div>
       )}
