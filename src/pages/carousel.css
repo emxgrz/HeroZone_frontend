@@ -6,3 +6,11 @@
  margin-bottom: -20px;
 }
 
+@media (max-width: 750px) {
+  .carousel img {
+    width: 300px;
+    height: auto;
+  }
+  
+}
+
