@@ -12,13 +12,11 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
   const [searchOn, setSearchOn] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setLoading(true)
-  }, []);
 
   useEffect(() => {
     const delayAPICalls = setTimeout(() => {
       if (searchedCharacter.length >= 3) {
+        setLoading(true)
         setSearchOn(true);
         const fetchCharacters = async () => {
           try {
@@ -41,6 +39,7 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
             setLoading(false);
           }
         };
+
         fetchCharacters();
       } else {
         setSearchOn(false);
@@ -68,6 +67,10 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
         style={{ padding: "10px", marginBottom: "50px", width: "50%", border: "2px solid #FFDE21", borderRadius: "5px" }}
       />
 
+      <p style={{ color: 'white' }}> Write above the Marvel character name you are searching for (3 letters min.)</p>
+      <p style={{ color: 'white' }}>and if everything goes well... you'll find it.</p>
+      <br></br>
+
       {loading ? (
         <div className="loader-container">
           <ScaleLoader height={50} color="#e23636" />
@@ -86,8 +89,9 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
             ))
           ) : searchOn && (
             <>
+              <p>Oops!</p>
               <p>Are you sure this is a Marvel character?</p>
-              <p>Hint: are you looking for Batman? Not here</p>
+              <p>Hint: are you looking for Batman? Not here.</p>
               <Button
                 id="edit-button"
                 variant="warning"
