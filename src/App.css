@@ -64,14 +64,6 @@ html, body {
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.nav-link.active {
-  background-color: #e23636;
-  color: #202020 !important;
-  border-bottom: 2px solid #e23636;
-  box-shadow: 0 4px 15px rgba(226, 54, 54, 0.6);
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
 .nav-link:hover {
   background-color: rgba(226, 54, 54, 0.6);
   color: #ededed !important;
