@@ -18,8 +18,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
         const response = await axios.get(
           `${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes/${id}`
         );
-        // const response = await axios.get(`http://localhost:4000/newsuperheroes/3`) // test !!!
-        setSuperHero(response.data); // fetch from JSON server
+        setSuperHero(response.data);
 
         setLoading(false);
       } catch (error) {
@@ -29,7 +28,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
     };
 
     fetchSuperHeroDetails();
-  }, [id]); // useEffect happens again if id happens, making a new API call
+  }, [id]);
 
   if (loading) {
     return (
@@ -43,10 +42,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
     return <p className="mt-7">oops, no superhero found</p>;
   }
 
-  const { name, description, image, superpower, marvelId } = superHero; // JSON data
-  // ADD more info if needed !!!
-
-  //--------------------------------HANDLE DELETE
+  const { name, description, image, superpower, marvelId } = superHero;
 
   const handleDelete = async (id) => {
     const isConfirmed = window.confirm(
@@ -55,12 +51,10 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
 
     if (isConfirmed) {
       try {
-        // Petición DELETE al servidor
         await axios.delete(
           `${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes/${id}`
         );
 
-        // Actualizar la lista de superhéroes en el estado después de eliminar
         const updatedSuperheroes = newSuperheroes.filter(
           (hero) => hero.id !== id
         );
@@ -86,7 +80,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
           <h3 className="superpower">{superpower}</h3>
           <p>{description || "No description available"}</p>
 
-          {marvelId && ( // Solo renderiza el botón si marvelId está presente
+          {marvelId && (
             <Button
               id="edit-button"
               onClick={() => navigate(`/superhero-details/${marvelId}`)}

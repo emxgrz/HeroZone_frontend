@@ -72,8 +72,8 @@ HeroZone is an interactive app where users can explore a vast collection of Marv
 - [Deploy Link](https://herozone.netlify.app/)
 
 
-### Trello
+### Figma
 [Link to Figma Board](https://www.figma.com/board/UR2PcQlkXaz0ddGHwGnYO8/HeroZone?node-id=0-1&t=c6dZ4v5jSiqJZgII-1)
 
 ### Slides
-[Slides Link](#)
+[Slides Link](https://www.canva.com/design/DAGSmh9I29o/HRaVuVNJ4UeKq7vvcwtQtg/edit?utm_content=DAGSmh9I29o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
