@@ -42,7 +42,7 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
         console.error('no se ha podido crear tu superhéroe...');
       }
     } catch (error) {
-      console.error(error);
+      navigate(`*`)
     }
 
     setName("");

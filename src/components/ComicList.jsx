@@ -39,7 +39,7 @@ function ComicList({ comics, setComics }) {
 
 
       } catch (error) {
-        console.log('Error fetching Marvel SuperHeroes: ', error)
+        navigate(`*`)
         setLoading(false)
       }
     }

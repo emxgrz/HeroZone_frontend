@@ -43,7 +43,7 @@ function SuperHeroesList({ marvelSuperheroes, setMarvelSuperheroes }) {
         // setMarvelSuperheroes(response.data.data.results) // Marvel API format includes data section to access info
 
       } catch (error) {
-        console.log('Error fetching Marvel SuperHeroes: ', error)
+        navigate(`*`)
         setLoading(false)
       }
     }

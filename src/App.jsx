@@ -37,7 +37,7 @@ function App() {
             <Route path="/search-marvel" element={<SearchByNameInMarvelApiPage marvelSuperheroes={marvelSuperheroes} setMarvelSuperheroes={setMarvelSuperheroes} />} />
             <Route path="/comics-page" element={<ComicsPage  comics={comics} setComics={setComics} />}  />
             <Route path="/comic-details/:id" element={<ComicDetails />} />
-            <Route path="/About" element={<AboutPage />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
         </div>
