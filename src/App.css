@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
+/* ==================== */
+/* Global Styles */
+/* ==================== */
+
 #root {
   margin: 0 auto;
   text-align: center;
@@ -33,6 +37,10 @@ html, body {
   padding-top: 25px;
   height: 100%;
 }
+
+/* ==================== */
+/* Navigation Bar Styles */
+/* ==================== */
 
 .navbar {
   background-color: #202020 !important; 
@@ -73,12 +81,21 @@ html, body {
   background-color: #979797;
 }
 
+/* ==================== */
+/* Hero Section & Titles */
+/* ==================== */
+
 .carousel img {
   max-height: 300px;
 }
 
 .carousel-container h1 {
  margin-bottom: -20px;
+}
+
+.carousel-container img {
+  border-radius: 15px;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -106,10 +123,9 @@ h1 {
   margin-bottom: 30px;
 }
 
-.carousel-container img {
-  border-radius: 15px;
-  margin-bottom: 1rem;
-}
+/* ==================== */
+/* Card Layout & Superhero Cards */
+/* ==================== */
 
 #marvel-superhero-card, #new-superhero-card {
   display: flex;
@@ -146,6 +162,10 @@ h1 {
   box-shadow: 4px 8px 16px rgba(220, 220, 220, 0.391);
 }
 
+/* ==================== */
+/* Details Page Styles */
+/* ==================== */
+
 #superhero-details {
   background-color: #202020;
   color: rgb(217, 217, 217);
@@ -175,6 +195,10 @@ h1 {
   color: rgba(255, 255, 255, 0.85);
   font-family: "Play", sans-serif;
 }
+
+/* ==================== */
+/* Form & Buttons */
+/* ==================== */
 
 #edit-button, #form-button, #delete-button {
   font-family: "Bangers", system-ui;
@@ -252,6 +276,10 @@ input, textarea {
   color: #303030;
 }
 
+/* ==================== */
+/* Errors */
+/* ==================== */
+
 .no-super-found {
   margin-top: 4rem;
 }
@@ -262,10 +290,9 @@ input, textarea {
   padding: 0;
 }
 
-.marvel-api-credit {
-  font-size: 0.8rem;
-  color: #ccc;
-}
+/* ==================== */
+/* About */
+/* ==================== */
 
 .about-container {
   color: #e23636;
@@ -288,6 +315,15 @@ input, textarea {
   font-size: 1.7rem;
 }
 
+/* ==================== */
+/* Footer Styles */
+/* ==================== */
+
+.marvel-api-credit {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
 .footer {
   background-color: #202020;
   border-top: 3px solid #e23636;
@@ -308,6 +344,10 @@ input, textarea {
 .footer a:hover {
   color: #FFDE21 !important;
 }
+
+/* ==================== */
+/* Responsive Breakpoints */
+/* ==================== */
 
 @media (max-width: 768px) {
 
