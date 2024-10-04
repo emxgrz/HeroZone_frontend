@@ -269,6 +269,25 @@ input, textarea {
   color: #ccc;
 }
 
+.about-container {
+  color: #e23636;
+}
+.dev-pic {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.social-links {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.dev-name {
+  font-family: "Bangers", sans-serif;
+  color: #FFD700;
+  font-size: 1.7rem;
+}
+
 .footer {
   background-color: #202020;
   border-top: 3px solid #e23636;
