@@ -15,7 +15,7 @@ function Footer() {
           </a>
           © 2024
         </small>
-        <br></br>
+        {/* <br></br>
         <small className="marvel-api-credit">
           →{" "}
           <a
@@ -26,7 +26,7 @@ function Footer() {
           >
             GitHub
           </a>
-        </small>
+        </small> */}
       </div>
     </footer>
   );
