@@ -105,6 +105,7 @@ h1 {
 .hero-message {
   font-family: "Bangers", system-ui;
   font-size: 1.3rem;
+  letter-spacing: 1.2px;
   color: #ededed;
   margin-top: 10px;
   margin-bottom: 30px;
@@ -223,6 +224,7 @@ form {
   background-color: #1c1c1c14;
   border-radius: 15px;
   padding: 20px;
+  padding-top: 2rem;
   max-width: 600px;
   margin: 20px auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -234,6 +236,7 @@ form h1 {
   color: #FFDE21;
   font-size: 36px;
   margin-bottom: 20px;
+  padding-bottom: 2rem;
 }
 
 form h3 {
