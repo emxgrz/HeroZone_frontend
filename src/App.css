@@ -72,6 +72,12 @@ html, body {
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+.nav-link.active {
+  color: #ededed !important;
+  background-color: rgba(226, 54, 54, 0.6) !important;
+}
+
+
 .nav-link:hover {
   background-color: rgba(226, 54, 54, 0.6);
   color: #ededed !important;
@@ -299,13 +305,20 @@ input, textarea {
 }
 
 .dev-pic {
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.dev-bio {
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 .social-links {
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
   cursor: pointer;
 }
 
@@ -313,6 +326,8 @@ input, textarea {
   font-family: "Bangers", sans-serif;
   color: #FFD700;
   font-size: 1.7rem;
+  padding: 1rem;
+  padding-top: 0.5rem;
 }
 
 /* ==================== */

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   const handleNavLinkClick = () => {
@@ -11,9 +11,9 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/" onClick={handleNavLinkClick}>
+        <NavLink className="navbar-brand" to="/" onClick={handleNavLinkClick}>
           HeroZone
-        </Link>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -28,17 +28,17 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link
+              <NavLink
                 className="nav-link"
                 to="/search-marvel"
                 onClick={handleNavLinkClick}
               >
                 {" "}
                 Marvel Superheroes{" "}
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 className="nav-link"
                 aria-current="page"
                 to="/new-superheroes"
@@ -46,20 +46,20 @@ function Navbar() {
               >
                 {" "}
                 New Superheroes{" "}
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 className="nav-link"
                 to="/comics-page"
                 onClick={handleNavLinkClick}
               >
                 {" "}
                 Comics{" "}
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 id="create-your-sh"
                 className="nav-link"
                 to="/create-superhero"
@@ -67,10 +67,10 @@ function Navbar() {
               >
                 {" "}
                 Create Your SuperHero{" "}
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link
+              <NavLink
                 id="create-your-sh"
                 className="nav-link"
                 to="/about"
@@ -78,7 +78,7 @@ function Navbar() {
               >
                 {" "}
                 About Us{" "}
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>

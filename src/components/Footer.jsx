@@ -4,7 +4,7 @@ function Footer() {
       <div className="container">
         <p className="mb-2">Pain is for lesser men. I. Am. Doom.</p>
         <small className="marvel-api-credit">
-          Data provided by © 2024{" "}
+          Data provided by{" "}
           <a
             href="https://developer.marvel.com/"
             target="_blank"
@@ -13,6 +13,7 @@ function Footer() {
           >
             MARVEL
           </a>
+          © 2024
         </small>
         <br></br>
         <small className="marvel-api-credit">

@@ -18,7 +18,7 @@ function AboutPage() {
           />
 
           <h5 className="mt-2 dev-name">Emma García</h5>
-          <p>
+          <p className="dev-bio">
             Navigates code like Spike navigates the Bebop; with a flair for
             culinary adventures and a playlist curated by Taylor Swift.
           </p>
@@ -54,7 +54,7 @@ function AboutPage() {
           />
 
           <h5 className="mt-2 dev-name">Clara Seijo</h5>
-          <p>
+          <p className="dev-bio">
             Codes as meticulously as solving a Rubik's Cube on a bike ride, with
             the strategic mindset of Batman planning his next move.
           </p>
