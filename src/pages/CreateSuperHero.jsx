@@ -1,13 +1,11 @@
-import CreateSuperHeroForm from "../components/CreateSuperHeroForm.jsx"
+import CreateSuperHeroForm from "../components/CreateSuperHeroForm.jsx";
 
-function CreateSuperHero({setNewSuperheroes}) {
-  
-
+function CreateSuperHero({ setNewSuperheroes }) {
   return (
     <div>
-      <CreateSuperHeroForm setNewSuperheroes={setNewSuperheroes}/>
+      <CreateSuperHeroForm setNewSuperheroes={setNewSuperheroes} />
     </div>
-  )
+  );
 }
 
-export default CreateSuperHero
+export default CreateSuperHero;

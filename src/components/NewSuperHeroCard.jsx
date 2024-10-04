@@ -1,16 +1,13 @@
 import { useNavigate } from "react-router-dom";
 
 function NewSuperHeroCard({ id, name, image }) {
-
   const navigate = useNavigate();
 
   const handleNewClick = () => {
     navigate(`/custom-superhero-details/${id}`);
   };
 
-
   return (
-
     <div
       className="card text-center mb-4"
       id="new-superhero-card"

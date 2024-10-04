@@ -23,7 +23,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
 
         setLoading(false);
       } catch (error) {
-        navigate(`*`)
+        navigate(`*`);
         setLoading(false);
       }
     };
@@ -67,19 +67,19 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
         setNewSuperheroes(updatedSuperheroes);
         navigate("/new-superheroes");
       } catch (error) {
-        navigate(`*`)
+        navigate(`*`);
       }
     }
   };
 
   const handleBack = () => {
-    navigate(-1)
- }
+    navigate(-1);
+  };
 
   return (
     <div className="container my-5" id="superhero-details">
       <div className="row justify-content-center">
-      <h1>meet your new superhero</h1>
+        <h1>meet your new superhero</h1>
         <div className="col-md-6 text-center">
           <img src={image} alt={name} className="img-fluid rounded mb-4" />
           <h2 className="mb-3">{name}</h2>
@@ -99,7 +99,8 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
             id="form-button"
             variant="warning"
             onClick={handleBack}
-            className="mt-4">
+            className="mt-4"
+          >
             Back
           </Button>
 

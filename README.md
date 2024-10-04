@@ -18,7 +18,6 @@ HeroZone is an interactive app where users can explore a vast collection of Marv
 - Libraries: Axios, React Router, Bootstrap
 
 ## Backlog Functionalities
-- **Favorite Characters**: Option to save favorite characters or comics to a personal list.
 - **Comics Search Filter**: Add advanced search filters for comics (by year, writer, etc.).
 - **Community Heroes**: Showcase the top custom superheroes created by the community.
 

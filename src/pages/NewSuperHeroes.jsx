@@ -1,14 +1,16 @@
-import NewSuperHeroesList from "../components/NewSuperHeroesList"
+import NewSuperHeroesList from "../components/NewSuperHeroesList";
 
 function NewSuperHeroes({ newSuperheroes, setNewSuperheroes }) {
-// function NewSuperHeroes() {
+  // function NewSuperHeroes() {
   return (
     <div>
       <h1 className="new-super-title">brand new superheroes</h1>
-      <NewSuperHeroesList newSuperheroes={newSuperheroes} setNewSuperheroes={setNewSuperheroes} />
+      <NewSuperHeroesList
+        newSuperheroes={newSuperheroes}
+        setNewSuperheroes={setNewSuperheroes}
+      />
     </div>
-  )
+  );
 }
 
-export default NewSuperHeroes
-
+export default NewSuperHeroes;

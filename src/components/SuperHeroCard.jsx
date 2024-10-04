@@ -1,13 +1,11 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
-function SuperHeroCard({ id, name, image }) { // pass 'onClick' if needed !!
-
+function SuperHeroCard({ id, name, image }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate(`/superhero-details/${id}`);
   };
-
 
   return (
     <div
@@ -22,10 +20,9 @@ function SuperHeroCard({ id, name, image }) { // pass 'onClick' if needed !!
       />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
-        {/* name + image only, pass other props to SHDetails.jsx (page) */}
       </div>
     </div>
   );
 }
 
-export default SuperHeroCard
+export default SuperHeroCard;
