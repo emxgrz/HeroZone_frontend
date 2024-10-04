@@ -6,11 +6,13 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
+  const [superpower, setSuperpower] = useState("");
   const navigate = useNavigate();
 
   const handleNameChange = (event) => setName(event.target.value);
   const handleDescriptionChange = (event) => setDescription(event.target.value);
   const handleImageChange = (event) => setImage(event.target.value);
+  const handleSuperpower = (event) => setSuperpower(event.target.value);
 
   const handleAddSuperhero = async (event) => {
     event.preventDefault();
@@ -19,6 +21,7 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
       name,
       description,
       image,
+      superpower
     };
 
     try {
@@ -42,7 +45,7 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
 
         navigate("/new-superheroes");
       } else {
-        console.error("no se ha podido crear tu superhéroe...");
+        console.error("error while creating ypur superhero...");
       }
     } catch (error) {
       navigate(`*`);
@@ -64,6 +67,17 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
             value={name}
             type="text"
             name="name"
+            required
+          />
+        </div>
+
+        <div className="mb-3">
+          <h3>Superpower:</h3>
+          <input
+            onChange={handleSuperpower}
+            value={superpower}
+            type="text"
+            name="superpower"
             required
           />
         </div>

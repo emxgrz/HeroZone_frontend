@@ -43,7 +43,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
     return <p className="mt-7">oops, no superhero found</p>;
   }
 
-  const { name, description, image, marvelId } = superHero; // JSON data
+  const { name, description, image, superpower, marvelId } = superHero; // JSON data
   // ADD more info if needed !!!
 
   //--------------------------------HANDLE DELETE
@@ -83,6 +83,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
         <div className="col-md-6 text-center">
           <img src={image} alt={name} className="img-fluid rounded mb-4" />
           <h2 className="mb-3">{name}</h2>
+          <h3 className="superpower">{superpower}</h3>
           <p>{description || "No description available"}</p>
 
           {marvelId && ( // Solo renderiza el botón si marvelId está presente
