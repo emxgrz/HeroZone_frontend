@@ -134,7 +134,7 @@ h1 {
   cursor: pointer;
 }
 
-#new-superhero-card, .character-list {
+.character-list {
   margin-right: 25px;
   margin-left: 25px;
 }
@@ -368,7 +368,7 @@ input, textarea {
     margin: 1rem;
   }
 
-  #new-superhero-card, .character-list {
+ .character-list {
     margin: 1rem;
   }
 }
