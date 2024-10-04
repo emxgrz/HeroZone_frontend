@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import SuperHeroCard from "./SuperHeroCard";
 import ScaleLoader from "react-spinners/ScaleLoader";
-import { Button } from 'react-bootstrap';
-
+import { Button } from "react-bootstrap";
 
 function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
   const [searchedCharacter, setSearchedCharacter] = useState("");
@@ -12,11 +11,10 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
   const [searchOn, setSearchOn] = useState(false);
   const navigate = useNavigate();
 
-
   useEffect(() => {
     const delayAPICalls = setTimeout(() => {
       if (searchedCharacter.length >= 3) {
-        setLoading(true)
+        setLoading(true);
         setSearchOn(true);
         const fetchCharacters = async () => {
           try {
@@ -34,7 +32,7 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
             );
             setMarvelSuperheroes(response.data.data.results);
           } catch (error) {
-            navigate(`*`)
+            navigate(`*`);
           } finally {
             setLoading(false);
           }
@@ -45,14 +43,14 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
         setSearchOn(false);
         setMarvelSuperheroes([]);
       }
-    }, 2000); // waiting-time after seraching to avoid multiple api calls
+    }, 2000);
 
-    return () => clearTimeout(delayAPICalls); // clean timeout after search
+    return () => clearTimeout(delayAPICalls);
   }, [searchedCharacter]);
 
   useEffect(() => {
     return () => {
-      setMarvelSuperheroes([]); // added to clear search when component unmounts
+      setMarvelSuperheroes([]);
     };
   }, [setMarvelSuperheroes]);
 
@@ -64,11 +62,23 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
         placeholder="Search for Marvel characters..."
         value={searchedCharacter}
         onChange={(e) => setSearchedCharacter(e.target.value)}
-        style={{ padding: "10px", marginBottom: "50px", width: "50%", border: "2px solid #FFDE21", borderRadius: "5px" }}
+        style={{
+          padding: "10px",
+          marginBottom: "50px",
+          width: "50%",
+          border: "2px solid #FFDE21",
+          borderRadius: "5px",
+        }}
       />
 
-      <p style={{ color: 'white' }}> Write above the Marvel character name you are searching for (3 letters min.)</p>
-      <p style={{ color: 'white' }}>and if everything goes well... you'll find it.</p>
+      <p style={{ color: "white" }}>
+        {" "}
+        Write above the Marvel character name you are searching for (3 letters
+        min.)
+      </p>
+      <p style={{ color: "white" }}>
+        and if everything goes well... you'll find it.
+      </p>
       <br></br>
 
       {loading ? (
@@ -77,30 +87,31 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
         </div>
       ) : (
         <div className="character-list">
-          {marvelSuperheroes.length > 0 ? (
-            marvelSuperheroes.map((hero) => (
-              <SuperHeroCard
-                key={hero.id}
-                id={hero.id}
-                name={hero.name}
-                image={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
-                description={hero.description || "No description available."}
-              />
-            ))
-          ) : searchOn && (
-            <>
-              <p>Oops!</p>
-              <p>Are you sure this is a Marvel character?</p>
-              <p>Hint: are you looking for Batman? Not here.</p>
-              <Button
-                id="edit-button"
-                variant="warning"
-                onClick={() => navigate('/create-superhero')}
-                className="mt-4">
-                Create Superhero
-              </Button>
-            </>
-          )}
+          {marvelSuperheroes.length > 0
+            ? marvelSuperheroes.map((hero) => (
+                <SuperHeroCard
+                  key={hero.id}
+                  id={hero.id}
+                  name={hero.name}
+                  image={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
+                  description={hero.description || "No description available."}
+                />
+              ))
+            : searchOn && (
+                <>
+                  <p>Oops!</p>
+                  <p>Are you sure this is a Marvel character?</p>
+                  <p>Hint: are you looking for Batman? Not here.</p>
+                  <Button
+                    id="edit-button"
+                    variant="warning"
+                    onClick={() => navigate("/create-superhero")}
+                    className="mt-4"
+                  >
+                    Create Superhero
+                  </Button>
+                </>
+              )}
         </div>
       )}
     </div>

@@ -1,34 +1,35 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import GridLoader from "react-spinners/GridLoader"; 
+import GridLoader from "react-spinners/GridLoader";
 import { Button } from "react-bootstrap";
 
 function SuperHeroDetails() {
-  const { id } = useParams()
-  const [superHero, setSuperHero] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const { id } = useParams();
+  const [superHero, setSuperHero] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchSuperHeroDetails = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/v1/public/characters/${id}`, {
-          params: {
-            apikey: import.meta.env.VITE_API_KEY,
-            ts: import.meta.env.VITE_TIMESTAMP,
-            hash: import.meta.env.VITE_HASH
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/v1/public/characters/${id}`,
+          {
+            params: {
+              apikey: import.meta.env.VITE_API_KEY,
+              ts: import.meta.env.VITE_TIMESTAMP,
+              hash: import.meta.env.VITE_HASH,
+            },
           }
-        });
+        );
 
-        setSuperHero(response.data.data.results[0])
-        setLoading(false)
-
+        setSuperHero(response.data.data.results[0]);
+        setLoading(false);
       } catch (error) {
-        navigate(`*`)
-        setLoading(false)
+        navigate(`*`);
+        setLoading(false);
       }
     };
 
@@ -40,18 +41,16 @@ function SuperHeroDetails() {
       <div className="loader-container">
         <GridLoader height={50} color="#e23636" />
       </div>
-    )
+    );
   }
 
   if (!superHero) {
-    return <p className="no-super-found">oops, no superhero found</p>
+    return <p className="no-super-found">oops, no superhero found</p>;
   }
 
   const handleEditClick = () => {
-    navigate(`/custom-superhero/${id}`) // using the marvel id for url to re-use in the next page/component (useParams)
-  }
-
-  
+    navigate(`/custom-superhero/${id}`); // using the marvel id for url to re-use in the next page/component (useParams)
+  };
 
   const { name, description, thumbnail } = superHero;
   const imageUrl = `${thumbnail.path}.${thumbnail.extension}`;
@@ -69,10 +68,10 @@ function SuperHeroDetails() {
             id="edit-button"
             variant="warning"
             onClick={handleEditClick}
-            className="mt-4">
+            className="mt-4"
+          >
             Edit
           </Button>
-
         </div>
       </div>
     </div>

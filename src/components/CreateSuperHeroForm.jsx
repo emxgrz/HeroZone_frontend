@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom'; // Suponiendo que usas react-router-dom para navegación
+import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 function CreateSuperHeroForm({ setNewSuperheroes }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  
-  // Crear variable para navegar de regreso a home
   const navigate = useNavigate();
 
   const handleNameChange = (event) => setName(event.target.value);
@@ -24,25 +22,30 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
     };
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newSuperhero), 
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newSuperhero),
+        }
+      );
 
       if (response.ok) {
-        const createdSuperhero = await response.json(); 
-        setNewSuperheroes((actualSuperheroes) => [createdSuperhero, ...actualSuperheroes]);
+        const createdSuperhero = await response.json();
+        setNewSuperheroes((actualSuperheroes) => [
+          createdSuperhero,
+          ...actualSuperheroes,
+        ]);
 
-        
-        navigate('/new-superheroes');
+        navigate("/new-superheroes");
       } else {
-        console.error('no se ha podido crear tu superhéroe...');
+        console.error("no se ha podido crear tu superhéroe...");
       }
     } catch (error) {
-      navigate(`*`)
+      navigate(`*`);
     }
 
     setName("");
@@ -54,7 +57,6 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
     <div>
       <form onSubmit={handleAddSuperhero} className="newSuperHeroForm">
         <h1>Create your new superhero!</h1>
-        {/* <div className="nameChange"> */}
         <div className="mb-3">
           <h3>Name:</h3>
           <input
@@ -66,7 +68,6 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
           />
         </div>
 
-        {/* <div className="descriptionChange"> */}
         <div className="mb-3">
           <h3>Description:</h3>
           <textarea
@@ -78,7 +79,6 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
           />
         </div>
 
-        {/* <div className="imageChange"> */}
         <div className="mb-3">
           <h3>Image URL:</h3>
           <input
@@ -90,14 +90,14 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
           />
         </div>
 
-        {/* <button type="submit">Add Superhero</button> */}
         <Button
-        type="submit"
-            id="form-button"
-            variant="warning"
-            className="mt-4">
-            Add Superhero
-          </Button>
+          type="submit"
+          id="form-button"
+          variant="warning"
+          className="mt-4"
+        >
+          Add Superhero
+        </Button>
       </form>
     </div>
   );

@@ -1,44 +1,37 @@
-import { useEffect, useState } from "react"; // check if useState is needed when running
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import NewSuperHeroCard from "./NewSuperHeroCard";
-import { Button } from 'react-bootstrap';
+import { Button } from "react-bootstrap";
 
-function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
-  // console.log(newSuperheroes, setNewSuperheroes)
-
-  const [searchTerm, setSearchTerm] = useState(""); // stores the search term
-  const [filteredHeroes, setFilteredHeroes] = useState(newSuperheroes); // stores the results
-  const navigate = useNavigate()
+function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes }) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredHeroes, setFilteredHeroes] = useState(newSuperheroes);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchNewSuperheroes = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes`)
+        const response = await axios.get(
+          `${import.meta.env.VITE_JSON_SERVER_URL}/newsuperheroes`
+        );
 
-        setNewSuperheroes(response.data) // sets newsuperheroes data from JSON server
-        setFilteredHeroes(response.data) // all newsuperheroes displayed at the beginning
-        // console.log(response.data)
-
+        setNewSuperheroes(response.data);
+        setFilteredHeroes(response.data);
       } catch (error) {
-        navigate(`*`)
-
+        navigate(`*`);
       }
-    }
-
-    fetchNewSuperheroes() // fetch superheroes from JSON server when component mounts
-
-  }, []) // empty array to ensures useEffect runs only once when the component monts
-  // console.log(setNewSuperheroes)
+    };
+    fetchNewSuperheroes();
+  }, []);
 
   useEffect(() => {
     setFilteredHeroes(
-      newSuperheroes.filter(superhero => 
-        superhero.name.toLowerCase().includes(searchTerm.toLowerCase()) // managing capitals and lower
+      newSuperheroes.filter((superhero) =>
+        superhero.name.toLowerCase().includes(searchTerm.toLowerCase())
       )
-    )
-  }, [searchTerm, newSuperheroes])
-
+    );
+  }, [searchTerm, newSuperheroes]);
 
   return (
     <div className="new-superhero-list">
@@ -49,39 +42,51 @@ function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-bar"
-          style={{ padding: "10px", marginBottom: "20px", width: "50%", border: "2px solid #FFDE21", borderRadius: "5px" }}
+          style={{
+            padding: "10px",
+            marginBottom: "20px",
+            width: "50%",
+            border: "2px solid #FFDE21",
+            borderRadius: "5px",
+          }}
         />
       </div>
-      
+
       {filteredHeroes.length > 0 ? (
-        <div className="row"> {/* Asegura que el diseño sea en fila */}
+        <div className="row">
           {filteredHeroes.map((newSuperhero) => (
-            <div key={newSuperhero.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div
+              key={newSuperhero.id}
+              className="col-12 col-sm-6 col-md-4 col-lg-3"
+            >
               <NewSuperHeroCard
                 id={newSuperhero.id}
                 name={newSuperhero.name}
                 image={newSuperhero.image}
-                description={newSuperhero.description ? newSuperhero.description : 'No description available - yet.'}
+                description={
+                  newSuperhero.description
+                    ? newSuperhero.description
+                    : "No description available - yet."
+                }
               />
             </div>
           ))}
         </div>
-
       ) : (
-
         <div>
           <p>Your new superhero doesn't exist — yet.</p>
           <Button
             id="edit-button"
             variant="warning"
-            onClick={() => navigate('/create-superhero')}
-            className="mt-4">
+            onClick={() => navigate("/create-superhero")}
+            className="mt-4"
+          >
             Create Superhero
           </Button>
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default NewSuperHeroesList
+export default NewSuperHeroesList;

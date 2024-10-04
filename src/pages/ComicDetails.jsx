@@ -2,33 +2,34 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import GridLoader from "react-spinners/GridLoader"; 
+import GridLoader from "react-spinners/GridLoader";
 import { Button } from "react-bootstrap";
 
-
 function ComicDetails() {
-  const { id } = useParams()
-  const [detailComic, setDetailComic] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const navigate = useNavigate()
+  const { id } = useParams();
+  const [detailComic, setDetailComic] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDetailComicDetails = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/v1/public/comics/${id}`, {
-          params: {
-            apikey: import.meta.env.VITE_API_KEY,
-            ts: import.meta.env.VITE_TIMESTAMP,
-            hash: import.meta.env.VITE_HASH
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/v1/public/comics/${id}`,
+          {
+            params: {
+              apikey: import.meta.env.VITE_API_KEY,
+              ts: import.meta.env.VITE_TIMESTAMP,
+              hash: import.meta.env.VITE_HASH,
+            },
           }
-        });
+        );
 
-        setDetailComic(response.data.data.results[0])
-        setLoading(false)
-
+        setDetailComic(response.data.data.results[0]);
+        setLoading(false);
       } catch (error) {
-        navigate(`*`)
-        setLoading(false)
+        navigate(`*`);
+        setLoading(false);
       }
     };
 
@@ -40,19 +41,19 @@ function ComicDetails() {
       <div className="loader-container">
         <GridLoader height={50} color="#e23636" />
       </div>
-    )
+    );
   }
 
   if (!detailComic) {
-    return <p>oops, no comic found</p>
+    return <p>oops, no comic found</p>;
   }
 
   const handleBack = () => {
-    navigate(-1)
-  }
+    navigate(-1);
+  };
 
   const { title, creators, thumbnail } = detailComic;
-  const names = creators.items.map(item => item.name)
+  const names = creators.items.map((item) => item.name);
   const imageUrl = `${thumbnail.path}.${thumbnail.extension}`;
 
   return (
@@ -67,10 +68,10 @@ function ComicDetails() {
             id="form-button"
             variant="warning"
             onClick={handleBack}
-            className="mt-4">
+            className="mt-4"
+          >
             Back
           </Button>
-
         </div>
       </div>
     </div>

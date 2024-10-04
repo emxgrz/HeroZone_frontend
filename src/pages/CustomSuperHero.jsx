@@ -1,11 +1,11 @@
-import CustomSuperHeroForm from "../components/CustomSuperHeroForm"
+import CustomSuperHeroForm from "../components/CustomSuperHeroForm";
 
-function CustomSuperHero({setNewSuperheroes}) {
+function CustomSuperHero({ setNewSuperheroes }) {
   return (
     <div>
-      <CustomSuperHeroForm setNewSuperheroes={setNewSuperheroes}/>
+      <CustomSuperHeroForm setNewSuperheroes={setNewSuperheroes} />
     </div>
-  )
+  );
 }
 
-export default CustomSuperHero
+export default CustomSuperHero;
