@@ -73,6 +73,10 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
     }
   };
 
+  const handleBack = () => {
+    navigate(-1)
+ }
+
   return (
     <div className="container my-5" id="superhero-details">
       <div className="row justify-content-center">
@@ -91,6 +95,14 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
               See original
             </Button>
           )}
+
+          <Button
+            id="form-button"
+            variant="warning"
+            onClick={handleBack}
+            className="mt-4">
+            Back
+          </Button>
 
           <Button
             id="delete-button"
