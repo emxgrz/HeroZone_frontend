@@ -77,7 +77,6 @@ function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes }) {
           <p>Your new superhero doesn't exist — yet.</p>
           <Button
             id="edit-button"
-            variant="warning"
             onClick={() => navigate("/create-superhero")}
             className="mt-4"
           >

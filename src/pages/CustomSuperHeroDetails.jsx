@@ -97,7 +97,6 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
 
           <Button
             id="form-button"
-            variant="warning"
             onClick={handleBack}
             className="mt-4"
           >
@@ -106,7 +105,6 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
 
           <Button
             id="delete-button"
-            variant="warning"
             onClick={() => handleDelete(superHero.id)}
             className="mt-4 mx-auto d-block"
           >

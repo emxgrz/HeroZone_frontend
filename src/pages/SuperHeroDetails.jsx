@@ -66,7 +66,6 @@ function SuperHeroDetails() {
 
           <Button
             id="edit-button"
-            variant="warning"
             onClick={handleEditClick}
             className="mt-4"
           >

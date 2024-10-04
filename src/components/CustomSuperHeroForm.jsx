@@ -134,7 +134,6 @@ function CustomSuperHeroForm({ setNewSuperheroes }) {
         <Button
           id="form-button"
           type="submit"
-          variant="warning"
           className="mt-4"
         >
           Save

@@ -104,7 +104,6 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
                   <p>Hint: are you looking for Batman? Not here.</p>
                   <Button
                     id="edit-button"
-                    variant="warning"
                     onClick={() => navigate("/create-superhero")}
                     className="mt-4"
                   >

@@ -93,7 +93,6 @@ function CreateSuperHeroForm({ setNewSuperheroes }) {
         <Button
           type="submit"
           id="form-button"
-          variant="warning"
           className="mt-4"
         >
           Add Superhero

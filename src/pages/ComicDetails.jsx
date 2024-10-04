@@ -66,7 +66,6 @@ function ComicDetails() {
 
           <Button
             id="form-button"
-            variant="warning"
             onClick={handleBack}
             className="mt-4"
           >
