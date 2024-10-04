@@ -4,7 +4,11 @@ function Footer() {
       <div className="container">
         <p className="mb-2">Pain is for lesser men. I. Am. Doom.</p> {/* Dr. Doom */}
         <small className="marvel-api-credit">
-          Data provided by <a href="https://developer.marvel.com/" target="_blank" rel="noreferrer" className="text-white">Marvel API</a> © 2024 MARVEL
+          Data provided by © 2024 <a href="https://developer.marvel.com/" target="_blank" rel="noreferrer" className="text-white">MARVEL</a> 
+        </small>
+        <br></br>
+        <small className="marvel-api-credit">
+          → <a href="https://github.com/emxgrz/HeroZone_frontend/" target="_blank" rel="noreferrer" className="text-white">GitHub</a> 
         </small>
       </div>
     </footer>
