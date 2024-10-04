@@ -1,4 +1,4 @@
-import CreateSuperHeroForm from "../components/CreateSuperHeroForm"
+import CreateSuperHeroForm from "../components/CreateSuperHeroForm.jsx"
 
 function CreateSuperHero({setNewSuperheroes}) {
   

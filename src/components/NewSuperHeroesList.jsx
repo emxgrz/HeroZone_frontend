@@ -21,7 +21,8 @@ function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
         // console.log(response.data)
 
       } catch (error) {
-        console.log('Error fetching New SuperHeroes: ', error)
+        navigate(`*`)
+
       }
     }
 

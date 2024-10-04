@@ -27,7 +27,7 @@ function ComicDetails() {
         setLoading(false)
 
       } catch (error) {
-        console.log("Error fetching comic details: ", error);
+        navigate(`*`)
         setLoading(false)
       }
     };

@@ -30,7 +30,8 @@ function CustomSuperHeroForm({ setNewSuperheroes }) {
         });
         setLoading(false);
       } catch (error) {
-        console.log('Error fetching Marvel SuperHeroes: ', error);
+        navigate(`*`)
+
         setLoading(false);
       }
     };
@@ -71,7 +72,8 @@ function CustomSuperHeroForm({ setNewSuperheroes }) {
         navigate('/new-superheroes');
       }
     } catch (error) {
-      console.log('Error saving hero details: ', error);
+      navigate(`*`)
+
     }
   };
 

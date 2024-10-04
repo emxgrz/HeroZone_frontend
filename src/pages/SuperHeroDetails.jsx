@@ -27,7 +27,7 @@ function SuperHeroDetails() {
         setLoading(false)
 
       } catch (error) {
-        console.log("Error fetching hero details: ", error);
+        navigate(`*`)
         setLoading(false)
       }
     };

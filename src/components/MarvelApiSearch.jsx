@@ -34,7 +34,7 @@ function MarvelApiSearch({ marvelSuperheroes, setMarvelSuperheroes }) {
             );
             setMarvelSuperheroes(response.data.data.results);
           } catch (error) {
-            console.log("Error fetching characters:", error);
+            navigate(`*`)
           } finally {
             setLoading(false);
           }

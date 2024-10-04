@@ -23,7 +23,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
 
         setLoading(false);
       } catch (error) {
-        console.log("Error fetching hero details: ", error);
+        navigate(`*`)
         setLoading(false);
       }
     };
@@ -67,8 +67,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
         setNewSuperheroes(updatedSuperheroes);
         navigate("/new-superheroes");
       } catch (error) {
-        console.error(error);
-        alert("Lo sentimos, no se pudo elimnar...");
+        navigate(`*`)
       }
     }
   };
