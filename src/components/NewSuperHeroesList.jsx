@@ -42,7 +42,6 @@ function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
 
   return (
     <div className="new-superhero-list">
-
       <div className="mb-5">
         <input
           type="text"
@@ -55,15 +54,19 @@ function NewSuperHeroesList({ newSuperheroes = [], setNewSuperheroes  }) {
       </div>
       
       {filteredHeroes.length > 0 ? (
-        filteredHeroes.map((newSuperhero) => (
-          <NewSuperHeroCard
-          key={newSuperhero.id}
-          id={newSuperhero.id}
-          name={newSuperhero.name}
-          image={newSuperhero.image}  // direct URL to the image, changed in custom + added in new
-          description={newSuperhero.description ? newSuperhero.description : 'No description available - yet.'}
-        />
-      ))
+        <div className="row"> {/* Asegura que el diseño sea en fila */}
+          {filteredHeroes.map((newSuperhero) => (
+            <div key={newSuperhero.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+              <NewSuperHeroCard
+                id={newSuperhero.id}
+                name={newSuperhero.name}
+                image={newSuperhero.image}
+                description={newSuperhero.description ? newSuperhero.description : 'No description available - yet.'}
+              />
+            </div>
+          ))}
+        </div>
+
       ) : (
 
         <div>
