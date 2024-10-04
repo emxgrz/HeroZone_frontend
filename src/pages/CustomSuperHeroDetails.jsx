@@ -76,6 +76,7 @@ function CustomSuperHeroDetails({ newSuperheroes, setNewSuperheroes }) {
   return (
     <div className="container my-5" id="superhero-details">
       <div className="row justify-content-center">
+      <h1>meet your new superhero</h1>
         <div className="col-md-6 text-center">
           <img src={image} alt={name} className="img-fluid rounded mb-4" />
           <h2 className="mb-3">{name}</h2>
