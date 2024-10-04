@@ -9,10 +9,10 @@ function Error404() {
     <div className="error-page container text-center">
       <h1 className="home-title">404: Universe Not Found</h1>
       <h3>Oops!</h3>
-      <h4>
+      <h5>
         It seems you’ve tried navigating to a galaxy unknown or maybe a secret
         universe that even Doctor Strange can't reach.
-      </h4>
+      </h5>
 
       <Button
         id="edit-button"
