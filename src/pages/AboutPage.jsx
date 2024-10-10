@@ -19,8 +19,8 @@ function AboutPage() {
 
           <h5 className="mt-2 dev-name">Emma García</h5>
           <p className="dev-bio">
-            Navigates code like Spike navigates the Bebop; with a flair for
-            culinary adventures and a playlist curated by Taylor Swift.
+            Navigates code like Spike navigates the Bebop, with a flair for
+            culinary experiences, and a logic as sharp as a Taylor Swift bridge.
           </p>
 
           <div className="social-links mt-3">
